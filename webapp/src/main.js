@@ -6,15 +6,13 @@ import 'vue-material/dist/theme/default.css'
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
-import App from './App'
+import App from './Focus'
 import Element from 'element-ui'
-import api from './tools/plugins/api'
 import api2 from './tools/plugins/api2'
 import utils from './tools/plugins/utils'
 
 Vue.use(VueMaterial)
 Vue.use(Element)
-Vue.use(api)
 Vue.use(api2)
 Vue.use(utils)
 Vue.config.productionTip = false

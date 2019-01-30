@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import FocusIndex from 'src/pages/Focus.vue'
+import Main from 'src/pages/Main.vue'
 import FocusEvents from 'src/components/focus/FocusEvents.vue'
 
 Vue.use(Router)
@@ -13,7 +13,7 @@ export default function createRouter () {
       {
         path: '/focus',
         name: 'focus index',
-        component: FocusIndex,
+        component: Main,
         children: [
           {
             path: 'main',

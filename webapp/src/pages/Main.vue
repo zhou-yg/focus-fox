@@ -3,8 +3,11 @@
  * Created by zhouyg.
  */
 import Vue from 'vue';
+import Topbar from 'components/layout/Topbar.vue';
+
 const Cpt = Vue.extend({
   components: {
+    Topbar,
   },
   props: {
   },
@@ -29,7 +32,9 @@ export default Cpt;
 
 <template lang="html">
   <div class="">
-    <router-view />
+    <Topbar >
+      <router-view />
+    </Topbar>
   </div>
 </template>
 
