@@ -29,6 +29,7 @@ export default Cpt;
 
 <template lang="html">
   <div class="">
+    focus
   </div>
 </template>
 
