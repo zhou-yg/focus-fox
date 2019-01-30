@@ -20,53 +20,8 @@ export default function createRouter () {
   return new Router({
     mode: 'history',
     routes: [
-      // {
-      //   path: '/',
-      //   name: 'index',
-      //   redirect: '/views/images'
-      // },
       {
-        path: '/views/images/index',
-        name: 'images index',
-        component: Index,
-      },
-      {
-        path: '/views/images/search',
-        component: ConsolePanel,
-        children: [
-          {
-            path: 'result1',
-            component: SearchIframe,
-          },
-          {
-            path: 'result2',
-            component: SearchList,
-          },
-        ],
-      },
-      {
-        path: '/views/images/sites',
-        name: 'sites index',
-        component: Sites,
-      },
-      {
-        path: '/views/images/sites/list',
-        name: 'SitesList',
-        component: SitesList,
-      },
-      {
-        path: '/views/images/sites/published',
-        name: 'publishedList',
-        component: PublishedList,
-      },
-      {
-        path: '/views/images/sites/login-state',
-        name: 'loginState',
-        component: SiteLoginState,
-      },
-
-      {
-        path: '/views/images/focus',
+        path: '/focus',
         name: 'focus index',
         component: FocusIndex,
         children: [
