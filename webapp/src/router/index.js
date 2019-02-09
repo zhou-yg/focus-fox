@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Main from 'src/pages/Main.vue'
-import FocusEvents from 'src/components/focus/FocusEvents.vue'
+import Index from 'src/components/main/Index.vue'
 
 Vue.use(Router)
 
@@ -17,7 +17,7 @@ export default function createRouter () {
         children: [
           {
             path: 'main',
-            component: FocusEvents,
+            component: Index,
           },
         ],
       },

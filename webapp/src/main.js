@@ -1,17 +1,13 @@
-import 'element-ui/lib/theme-default/index.css'
-import 'vue-material/dist/vue-material.css'
-import 'vue-material/dist/theme/default.css'
-
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import 'element-ui/lib/theme-default/index.css'
+
 import Vue from 'vue'
-import VueMaterial from 'vue-material'
 import App from './Focus'
-import Element from 'element-ui'
 import api2 from './tools/plugins/api2'
 import utils from './tools/plugins/utils'
+import Element from 'element-ui'
 
-Vue.use(VueMaterial)
 Vue.use(Element)
 Vue.use(api2)
 Vue.use(utils)
