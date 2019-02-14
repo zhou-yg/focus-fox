@@ -1,5 +1,7 @@
 import axios from 'axios'
 import client from 'simple-mongo-server/lib/mongoMap/client'
+// 同步backend api 下
+import apiServerJson from '../server-api.json'
 
 const url1 = 'http://mongo.nomiwan.com/sms/sites/'
 const url2 = 'http://mongo.nomiwan.com/sms/sitePublish/'
@@ -48,7 +50,8 @@ export default {
     }
     window.$api = Object.assign(Vue.prototype.$api, {
       ...wrapperApi([
-        '/api/test'
+        '/api/test',
+        ...apiServerJson,
       ]),
     })
   }
