@@ -1,5 +1,5 @@
 const path = require('path');
-var loadApi = require('../util/loadApi');
+var loadApi = require('../utils/loadApi');
 var R = require('koa-router');
 
 var registerRouter = loadApi(path.resolve(__dirname, './api'), '');

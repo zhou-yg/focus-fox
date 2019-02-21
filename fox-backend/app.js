@@ -19,7 +19,7 @@ const koaSession = require('koa-session');
 var app = new koa();
 
 const router = require('./router/');
-
+const testUserMiddleware = require('./middlewares/testUser');
 
 app.use(logger());
 
@@ -68,7 +68,9 @@ app.use(function(ctx, next) {
   ctx.set("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
 
   return next();
-})
+});
+
+app.use(testUserMiddleware);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
