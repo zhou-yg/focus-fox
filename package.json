@@ -1,0 +1,27 @@
+{
+  "name": "focus-fox",
+  "version": "1.0.0",
+  "description": "focus content creator",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhou-yg/focus-fox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhou-yg/focus-fox/issues"
+  },
+  "homepage": "https://github.com/zhou-yg/focus-fox#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "moment": "^2.24.0",
+    "request": "^2.88.0"
+  }
+}
