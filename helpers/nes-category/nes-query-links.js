@@ -142,7 +142,7 @@ async function getLinks(index) {
           resolve(-1);
         }
       });
-      if (code === -1) {
+      if (code !== -1) {
         await sleep();
       }
     } catch(e) {
