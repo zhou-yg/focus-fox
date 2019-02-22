@@ -2,10 +2,10 @@
   <div class="topbar">
     <div class="navbar">
       <div class="logo-box">
-        <img class="logo" src="../../assets/logo.svg" alt="">
+        <!-- <img class="logo" src="../../assets/logo-wan.svg" alt="">
         <span>
-          Focus Fox
-        </span>
+          Fox Wan
+        </span> -->
       </div>
       <div class="profile">
         <span class="avatar">
@@ -17,16 +17,24 @@
       </div>
     </div>
     <div class="content">
-      <slot />
+
+      <div class="left-nav-box">
+        <LeftNav />
+      </div>
+      <div class="right-content">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import LeftNav from './LeftNav.vue';
+
 export default {
   name: '',
   components: {
-
+    LeftNav,
   },
   data () {
     return {
@@ -47,26 +55,31 @@ export default {
 <style scoped lang="css">
 :root{
   --navbar-height: 60px;
+  --margin: 10px;
 }
 .topbar {
   position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  left: var(--margin);
+  right: var(--margin);
+  top: var(--margin);
+  bottom: var(--margin);
 
   .content {
+    margin-top: var(--margin);
     width: 100%;
     position: absolute;
     left: 0;
     top: var(--navbar-height);
-    bottom: 0;
+    bottom: var(--margin);
+  }
+  .left-nav-box {
+    height: 100%;
   }
 }
 .navbar {
-  background-color: #fff;
+  background-color: #000;
   height: var(--navbar-height);
-  border-bottom: 1px solid #bbb;
+  border: 1px solid #fff;
   box-sizing: border-box;
 
   .logo-box {
@@ -86,18 +99,19 @@ export default {
     float: right;
     height: 40px;
     position: relative;
-    top: 10px;
+    top: 12.5px;
     right: 20px;
 
     .avatar {
-      background-color: #eee;
+      background-color: #fff;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       display: inline-block;
-      line-height: 40px;
+      line-height: 35px;
       text-align: center;
       font-size: 18px;
+      color: #000;
     }
     .name {
       font-size: 16px;

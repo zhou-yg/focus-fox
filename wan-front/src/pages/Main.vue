@@ -31,12 +31,14 @@ export default Cpt;
 </script>
 
 <template lang="html">
-  <div class="">
+  <div class="main">
     <Topbar >
       <router-view />
     </Topbar>
   </div>
 </template>
 
-<style lang="css">
+<style scoped lang="css">
+.main {
+}
 </style>

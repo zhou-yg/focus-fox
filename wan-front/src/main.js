@@ -3,7 +3,7 @@
 import 'element-ui/lib/theme-default/index.css'
 
 import Vue from 'vue'
-import App from './Focus'
+import App from './Wan'
 import api2 from './tools/plugins/api2'
 import utils from './tools/plugins/utils'
 import Element from 'element-ui'

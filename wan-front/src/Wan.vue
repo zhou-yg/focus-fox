@@ -15,6 +15,11 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+}
 #app {
   background-image:url(https://ojrbqzf6q.qnssl.com/2017090793986bg.png);
   font-family: Roboto, Noto, Helvetica, Arial, sans-serif;
@@ -30,5 +35,28 @@ export default {
 }
 .danger {
   color: red;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pointer {
+  cursor: pointer;
+  &:after {
+    content: '';
+    margin-left: 4px;
+    width: 0px;
+    height: 0px;
+    border: 3px solid;
+    border-color: transparent transparent transparent #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+a {
+  text-decoration: none;
+  color: #fff;
 }
 </style>

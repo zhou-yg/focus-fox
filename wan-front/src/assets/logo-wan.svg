@@ -1,0 +1,36 @@
+<svg
+  data-v-73fdaaa2=""
+  version="1.0"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="60"
+  height="41.052631578946"
+  color-interpolation-filters="sRGB" >
+  <g data-v-73fdaaa2="" fill="#e03f32" class="icon-svg-group iconsvg">
+    <g class="iconsvg-imagesvg">
+      <rect fill="#fff" fill-opacity="0" stroke-width="2" x="0" y="0" width="60" height="41.052631578946"></rect>
+      <svg x="0" y="0" width="60" height="41.052631578946" class="imagesvg-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.51 55.77">
+          <g>
+            <g>
+              <g>
+                <g>
+                  <path d="M13.59 43.82H0c0 6.6 6.08 12 13.59 12h54.33l-13.14-12z" fill="#f4c02e"></path>
+                  <g>
+                    <path d="M67.92 0H13.59v12h67.92c0-6.65-6.09-12-13.59-12z" fill="#e03f32"></path>
+                    <path d="M67.92 12v43.77c7.5 0 13.59-5.35 13.59-12V12z" fill="#8b1c3b"></path>
+                  </g>
+                </g>
+                <path d="M0 43.82h13.59V0C6.08 0 0 5.35 0 12z" fill="#ea8626"></path>
+                <ellipse cx="27.89" cy="27.29" rx="4.38" ry="3.85" fill="#ffffff"></ellipse>
+                <ellipse cx="42.61" cy="27.29" rx="4.38" ry="3.85" fill="#ffffff"></ellipse>
+                <ellipse cx="57.33" cy="27.29" rx="4.38" ry="3.85" fill="#ffffff"></ellipse>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </svg>
+      <!---->
+    </g>
+  </g>
+</svg>

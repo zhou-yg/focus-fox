@@ -11,8 +11,8 @@ export default function createRouter () {
     mode: 'history',
     routes: [
       {
-        path: '/focus',
-        name: 'focus index',
+        path: '/wan',
+        name: 'wan index',
         component: Main,
         children: [
           {
