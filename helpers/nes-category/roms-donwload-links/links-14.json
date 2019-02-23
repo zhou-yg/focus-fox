@@ -1,0 +1,902 @@
+[
+  {
+    "name": "拳王’97(格斗之王’97)(中文)",
+    "downlink": "/media/nes/2209/%E6%8B%B3%E7%8E%8B_97%E6%A0%BC%E6%96%97%E4%B9%8B%E7%8E%8B_97%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2209/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (美)",
+    "downlink": "/media/nes/6351/Super_Street_Fighter_II_-_The_New_Challengers_U.zip",
+    "url": "http://nesyouxi.net/nes/6351/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (日)",
+    "downlink": "/media/nes/6351/Super_Street_Fighter_II_-_The_New_Challengers_J.zip",
+    "url": "http://nesyouxi.net/nes/6351/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (欧)",
+    "downlink": "/media/nes/6351/Super_Street_Fighter_II_-_The_New_Challengers_E.zip",
+    "url": "http://nesyouxi.net/nes/6351/"
+  },
+  {
+    "name": "激龟快打(忍者神龟格斗版)(中文)",
+    "downlink": "/media/nes/2094/%E6%BF%80%E9%BE%9F%E5%BF%AB%E6%89%93%E5%BF%8D%E8%80%85%E7%A5%9E%E9%BE%9F%E6%A0%BC%E6%96%97%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2094/"
+  },
+  {
+    "name": "乱马1/2超技乱舞篇(日)",
+    "downlink": "/media/nes/6238/Ranma_1-2_-_Chougi_Ranbu_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/6238/"
+  },
+  {
+    "name": "功夫(功夫大师，功夫小子)",
+    "downlink": "/media/nes/892/%E5%8A%9F%E5%A4%AB%E5%8A%9F%E5%A4%AB%E5%A4%A7%E5%B8%88_%E5%8A%9F%E5%A4%AB%E5%B0%8F%E5%AD%90.nes",
+    "url": "http://nesyouxi.net/nes/892/"
+  },
+  {
+    "name": "世界英雄2",
+    "downlink": "/media/nes/85/%E4%B8%96%E7%95%8C%E8%8B%B1%E9%9B%842.nes",
+    "url": "http://nesyouxi.net/nes/85/"
+  },
+  {
+    "name": "七龙珠-超武斗传2-1.1(日)",
+    "downlink": "/media/nes/6332/Dragon_Ball_Z_-_Super_Butouden_2_J_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/6332/"
+  },
+  {
+    "name": "真人快打2(美)(1.1)",
+    "downlink": "/media/nes/4709/Mortal_Kombat_II_U_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/4709/"
+  },
+  {
+    "name": "真人快打2(欧)(1.1)",
+    "downlink": "/media/nes/4709/Mortal_Kombat_II_E_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/4709/"
+  },
+  {
+    "name": "铁拳3(中文)",
+    "downlink": "/media/nes/179/%E9%93%81%E6%8B%B33%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/179/"
+  },
+  {
+    "name": "龙珠Z-激斗天下一武道会",
+    "downlink": "/media/nes/679/%E9%BE%99%E7%8F%A0Z-%E6%BF%80%E6%96%97%E5%A4%A9%E4%B8%8B%E4%B8%80%E6%AD%A6%E9%81%93%E4%BC%9A.nes",
+    "url": "http://nesyouxi.net/nes/679/"
+  },
+  {
+    "name": "李小龙(中文)",
+    "downlink": "/media/nes/2043/%E6%9D%8E%E5%B0%8F%E9%BE%99%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2043/"
+  },
+  {
+    "name": "英雄榜2 (美)",
+    "downlink": "/media/nes/5868/World_Heroes_2_U.zip",
+    "url": "http://nesyouxi.net/nes/5868/"
+  },
+  {
+    "name": "英雄榜2 (日)",
+    "downlink": "/media/nes/5868/World_Heroes_2_J.zip",
+    "url": "http://nesyouxi.net/nes/5868/"
+  },
+  {
+    "name": "拳王’96(格斗之王’96)(中文)",
+    "downlink": "/media/nes/444/%E6%8B%B3%E7%8E%8B_96%E6%A0%BC%E6%96%97%E4%B9%8B%E7%8E%8B_96%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/444/"
+  },
+  {
+    "name": "三国志-群雄争霸",
+    "downlink": "/media/nes/303/%E4%B8%89%E5%9B%BD%E5%BF%97-%E7%BE%A4%E9%9B%84%E4%BA%89%E9%9C%B8.nes",
+    "url": "http://nesyouxi.net/nes/303/"
+  },
+  {
+    "name": "真人快打3(中文)",
+    "downlink": "/media/nes/1922/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%933%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1922/"
+  },
+  {
+    "name": "热血格斗传说(中文)",
+    "downlink": "/media/nes/842/%E7%83%AD%E8%A1%80%E6%A0%BC%E6%96%97%E4%BC%A0%E8%AF%B4%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/842/"
+  },
+  {
+    "name": "饿狼传说特别版(日)",
+    "downlink": "/media/nes/6259/Garou_Densetsu_Special_J.zip",
+    "url": "http://nesyouxi.net/nes/6259/"
+  },
+  {
+    "name": "饿狼传说特别版(美)",
+    "downlink": "/media/nes/6259/Fatal_Fury_Special_U.zip",
+    "url": "http://nesyouxi.net/nes/6259/"
+  },
+  {
+    "name": "饿狼传说特别版(欧)[F207]",
+    "downlink": "/media/nes/6259/Fatal_Fury_Special_E_F207.zip",
+    "url": "http://nesyouxi.net/nes/6259/"
+  },
+  {
+    "name": "20人街霸(中文)",
+    "downlink": "/media/nes/1492/20%E4%BA%BA%E8%A1%97%E9%9C%B8%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1492/"
+  },
+  {
+    "name": "英雄传(中文)",
+    "downlink": "/media/nes/1468/%E8%8B%B1%E9%9B%84%E4%BC%A0%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1468/"
+  },
+  {
+    "name": "七龙珠(韩)",
+    "downlink": "/media/nes/6386/Dragon_Ball_Z_-_Chomutujeon_K.zip",
+    "url": "http://nesyouxi.net/nes/6386/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(日)",
+    "downlink": "/media/nes/6386/Dragon_Ball_Z_-_Super_Butouden_3_J.zip",
+    "url": "http://nesyouxi.net/nes/6386/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(法)",
+    "downlink": "/media/nes/6386/Dragon_Ball_Z_-_Ultime_Menace_F.zip",
+    "url": "http://nesyouxi.net/nes/6386/"
+  },
+  {
+    "name": "饿狼传说特别版(中文)",
+    "downlink": "/media/nes/102/%E9%A5%BF%E7%8B%BC%E4%BC%A0%E8%AF%B4%E7%89%B9%E5%88%AB%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/102/"
+  },
+  {
+    "name": "七龙珠-超武斗传(日)",
+    "downlink": "/media/nes/6224/Dragon_Ball_Z_-_Super_Butouden_J.zip",
+    "url": "http://nesyouxi.net/nes/6224/"
+  },
+  {
+    "name": "七龙珠-超武斗传(法)",
+    "downlink": "/media/nes/6224/Dragon_Ball_Z_-_Super_Butouden_F.zip",
+    "url": "http://nesyouxi.net/nes/6224/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(日)",
+    "downlink": "/media/nes/5785/Ranma_1-2_-_Bakuretsu_Rantou_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/5785/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(法)",
+    "downlink": "/media/nes/5785/Ranma_1-2_F.zip",
+    "url": "http://nesyouxi.net/nes/5785/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(欧)",
+    "downlink": "/media/nes/5785/Ranma_1-2_E.zip",
+    "url": "http://nesyouxi.net/nes/5785/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(美)",
+    "downlink": "/media/nes/5785/Ranma_1-2_-_Hard_Battle_U.zip",
+    "url": "http://nesyouxi.net/nes/5785/"
+  },
+  {
+    "name": "六人街霸(中文)",
+    "downlink": "/media/nes/1750/%E5%85%AD%E4%BA%BA%E8%A1%97%E9%9C%B8%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1750/"
+  },
+  {
+    "name": "真侍魂-霸王丸地狱变(中文)",
+    "downlink": "/media/nes/1099/%E7%9C%9F%E4%BE%8D%E9%AD%82-%E9%9C%B8%E7%8E%8B%E4%B8%B8%E5%9C%B0%E7%8B%B1%E5%8F%98%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1099/"
+  },
+  {
+    "name": "幽游白书2 (日)",
+    "downlink": "/media/nes/6313/Yuu_Yuu_Hakusho_2_-_Kakutou_no_Shou_J.zip",
+    "url": "http://nesyouxi.net/nes/6313/"
+  },
+  {
+    "name": "幽游白书-爆斗暗黑武术会",
+    "downlink": "/media/nes/422/%E5%B9%BD%E6%B8%B8%E7%99%BD%E4%B9%A6-%E7%88%86%E6%96%97%E6%9A%97%E9%BB%91%E6%AD%A6%E6%9C%AF%E4%BC%9A.nes",
+    "url": "http://nesyouxi.net/nes/422/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (美)",
+    "downlink": "/media/nes/5016/Super_Street_Fighter_II_-_The_New_Challengers_U.zip",
+    "url": "http://nesyouxi.net/nes/5016/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (日)",
+    "downlink": "/media/nes/5016/Super_Street_Fighter_II_-_The_New_Challengers_J.zip",
+    "url": "http://nesyouxi.net/nes/5016/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (欧)",
+    "downlink": "/media/nes/5016/Super_Street_Fighter_II_-_The_New_Challengers_E.zip",
+    "url": "http://nesyouxi.net/nes/5016/"
+  },
+  {
+    "name": "真人快打(美)",
+    "downlink": "/media/nes/4805/Mortal_Kombat_U.zip",
+    "url": "http://nesyouxi.net/nes/4805/"
+  },
+  {
+    "name": "真人快打(欧)",
+    "downlink": "/media/nes/4805/Mortal_Kombat_E.zip",
+    "url": "http://nesyouxi.net/nes/4805/"
+  },
+  {
+    "name": "幽游白书-魔界最强列传(中文)",
+    "downlink": "/media/nes/835/%E5%B9%BD%E6%B8%B8%E7%99%BD%E4%B9%A6-%E9%AD%94%E7%95%8C%E6%9C%80%E5%BC%BA%E5%88%97%E4%BC%A0%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/835/"
+  },
+  {
+    "name": "饿狼传说2(中文)",
+    "downlink": "/media/nes/1697/%E9%A5%BF%E7%8B%BC%E4%BC%A0%E8%AF%B42%E4%B8%AD%E6%96%872.nes",
+    "url": "http://nesyouxi.net/nes/1697/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(法)",
+    "downlink": "/media/nes/5854/Dragon_Ball_Z_-_Ultime_Menace_F.zip",
+    "url": "http://nesyouxi.net/nes/5854/"
+  },
+  {
+    "name": "七龙珠(韩)",
+    "downlink": "/media/nes/5854/Dragon_Ball_Z_-_Chomutujeon_K.zip",
+    "url": "http://nesyouxi.net/nes/5854/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(日)",
+    "downlink": "/media/nes/5854/Dragon_Ball_Z_-_Super_Butouden_3_J.zip",
+    "url": "http://nesyouxi.net/nes/5854/"
+  },
+  {
+    "name": "幽游白书-魔界最强列传(中文)",
+    "downlink": "/media/nes/1495/%E5%B9%BD%E6%B8%B8%E7%99%BD%E4%B9%A6-%E9%AD%94%E7%95%8C%E6%9C%80%E5%BC%BA%E5%88%97%E4%BC%A0%E4%B8%AD%E6%96%872.nes",
+    "url": "http://nesyouxi.net/nes/1495/"
+  },
+  {
+    "name": "幽游白书 (日)",
+    "downlink": "/media/nes/6312/Yuu_Yuu_Hakusho_J.zip",
+    "url": "http://nesyouxi.net/nes/6312/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (美)",
+    "downlink": "/media/nes/6323/Street_Fighter_II_Turbo_-_Hyper_Fighting_U.zip",
+    "url": "http://nesyouxi.net/nes/6323/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 1.1版 (欧)",
+    "downlink": "/media/nes/6323/Street_Fighter_II_Turbo_-_Hyper_Fighting_E_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/6323/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (日)",
+    "downlink": "/media/nes/6323/Street_Fighter_II_Turbo_-_Hyper_Fighting_J.zip",
+    "url": "http://nesyouxi.net/nes/6323/"
+  },
+  {
+    "name": "幽游白书-特别篇 (日)",
+    "downlink": "/media/nes/6369/Yuu_Yuu_Hakusho_-_Tokubetsu_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/6369/"
+  },
+  {
+    "name": "侍魂(美)",
+    "downlink": "/media/nes/6157/Samurai_Shodown_U.zip",
+    "url": "http://nesyouxi.net/nes/6157/"
+  },
+  {
+    "name": "侍魂(欧)",
+    "downlink": "/media/nes/6157/Samurai_Shodown_E.zip",
+    "url": "http://nesyouxi.net/nes/6157/"
+  },
+  {
+    "name": "街头霸王/街霸-ZERO2 (日)",
+    "downlink": "/media/nes/6155/Street_Fighter_Zero_2_J.zip",
+    "url": "http://nesyouxi.net/nes/6155/"
+  },
+  {
+    "name": "街头霸王/街霸2 (美)",
+    "downlink": "/media/nes/6155/Street_Fighter_Alpha_2_U.zip",
+    "url": "http://nesyouxi.net/nes/6155/"
+  },
+  {
+    "name": "街头霸王/街霸2 (欧)",
+    "downlink": "/media/nes/6155/Street_Fighter_Alpha_2_E.zip",
+    "url": "http://nesyouxi.net/nes/6155/"
+  },
+  {
+    "name": "豪血寺一族(美)",
+    "downlink": "/media/nes/6163/Power_Instinct_U.zip",
+    "url": "http://nesyouxi.net/nes/6163/"
+  },
+  {
+    "name": "豪血寺一族(日)",
+    "downlink": "/media/nes/6163/Gouketsuji_Ichizoku_J.zip",
+    "url": "http://nesyouxi.net/nes/6163/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (美)",
+    "downlink": "/media/nes/6050/Street_Fighter_II_Turbo_-_Hyper_Fighting_U.zip",
+    "url": "http://nesyouxi.net/nes/6050/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (日)",
+    "downlink": "/media/nes/6050/Street_Fighter_II_Turbo_-_Hyper_Fighting_J.zip",
+    "url": "http://nesyouxi.net/nes/6050/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 1.1版 (欧)",
+    "downlink": "/media/nes/6050/Street_Fighter_II_Turbo_-_Hyper_Fighting_E_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/6050/"
+  },
+  {
+    "name": "真人快打(美)",
+    "downlink": "/media/nes/5003/Mortal_Kombat_U.zip",
+    "url": "http://nesyouxi.net/nes/5003/"
+  },
+  {
+    "name": "真人快打(欧)",
+    "downlink": "/media/nes/5003/Mortal_Kombat_E.zip",
+    "url": "http://nesyouxi.net/nes/5003/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (美)",
+    "downlink": "/media/nes/6315/Super_Street_Fighter_II_-_The_New_Challengers_U.zip",
+    "url": "http://nesyouxi.net/nes/6315/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (日)",
+    "downlink": "/media/nes/6315/Super_Street_Fighter_II_-_The_New_Challengers_J.zip",
+    "url": "http://nesyouxi.net/nes/6315/"
+  },
+  {
+    "name": "超级街头霸王2/超级街霸2 (欧)",
+    "downlink": "/media/nes/6315/Super_Street_Fighter_II_-_The_New_Challengers_E.zip",
+    "url": "http://nesyouxi.net/nes/6315/"
+  },
+  {
+    "name": "少年街霸2(中文)",
+    "downlink": "/media/nes/1593/%E5%B0%91%E5%B9%B4%E8%A1%97%E9%9C%B82%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1593/"
+  },
+  {
+    "name": "真人快打5(中文)",
+    "downlink": "/media/nes/2027/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%935%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2027/"
+  },
+  {
+    "name": "真人快打3-56人特别版(中文)",
+    "downlink": "/media/nes/379/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%933-56%E4%BA%BA%E7%89%B9%E5%88%AB%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/379/"
+  },
+  {
+    "name": "快打传说(中文)",
+    "downlink": "/media/nes/2203/%E5%BF%AB%E6%89%93%E4%BC%A0%E8%AF%B4%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2203/"
+  },
+  {
+    "name": "街头格斗小子",
+    "downlink": "/media/nes/414/%E8%A1%97%E5%A4%B4%E6%A0%BC%E6%96%97%E5%B0%8F%E5%AD%90.nes",
+    "url": "http://nesyouxi.net/nes/414/"
+  },
+  {
+    "name": "四人街霸(中文)",
+    "downlink": "/media/nes/1763/%E5%9B%9B%E4%BA%BA%E8%A1%97%E9%9C%B8%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1763/"
+  },
+  {
+    "name": "幽游白书-魔界最强列传 (日)",
+    "downlink": "/media/nes/6379/Yuu_Yuu_Hakusho_Final_-_Makai_Saikyou_Retsuden_J.zip",
+    "url": "http://nesyouxi.net/nes/6379/"
+  },
+  {
+    "name": "马里奥街霸2(56人街霸)(中文)",
+    "downlink": "/media/nes/991/%E9%A9%AC%E9%87%8C%E5%A5%A5%E8%A1%97%E9%9C%B8256%E4%BA%BA%E8%A1%97%E9%9C%B8%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/991/"
+  },
+  {
+    "name": "铁拳2(中文)",
+    "downlink": "/media/nes/2152/%E9%93%81%E6%8B%B32%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/2152/"
+  },
+  {
+    "name": "街头霸王/街霸-ZERO2 (日)",
+    "downlink": "/media/nes/5245/Street_Fighter_Zero_2_J.zip",
+    "url": "http://nesyouxi.net/nes/5245/"
+  },
+  {
+    "name": "街头霸王/街霸2 (美)",
+    "downlink": "/media/nes/5245/Street_Fighter_Alpha_2_U.zip",
+    "url": "http://nesyouxi.net/nes/5245/"
+  },
+  {
+    "name": "街头霸王/街霸2 (欧)",
+    "downlink": "/media/nes/5245/Street_Fighter_Alpha_2_E.zip",
+    "url": "http://nesyouxi.net/nes/5245/"
+  },
+  {
+    "name": "七龙珠-武斗传(法)",
+    "downlink": "/media/nes/5511/Dragon_Ball_Z_-_La_Legende_Saien_F.zip",
+    "url": "http://nesyouxi.net/nes/5511/"
+  },
+  {
+    "name": "七龙珠-超次元战记(法)",
+    "downlink": "/media/nes/5511/Dragon_Ball_Z_-_Hyper_Dimension_F.zip",
+    "url": "http://nesyouxi.net/nes/5511/"
+  },
+  {
+    "name": "饿狼传说(日)",
+    "downlink": "/media/nes/4727/Garou_Densetsu_-_Shukumei_no_Tatakai_J.zip",
+    "url": "http://nesyouxi.net/nes/4727/"
+  },
+  {
+    "name": "饿狼传说(美)",
+    "downlink": "/media/nes/4727/Fatal_Fury_U.zip",
+    "url": "http://nesyouxi.net/nes/4727/"
+  },
+  {
+    "name": "饿狼传说(欧)",
+    "downlink": "/media/nes/4727/Fatal_Fury_E.zip",
+    "url": "http://nesyouxi.net/nes/4727/"
+  },
+  {
+    "name": "豪血寺一族(美)",
+    "downlink": "/media/nes/5719/Power_Instinct_U.zip",
+    "url": "http://nesyouxi.net/nes/5719/"
+  },
+  {
+    "name": "豪血寺一族(日)",
+    "downlink": "/media/nes/5719/Gouketsuji_Ichizoku_J.zip",
+    "url": "http://nesyouxi.net/nes/5719/"
+  },
+  {
+    "name": "真人快打4(中文)",
+    "downlink": "/media/nes/527/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%934%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/527/"
+  },
+  {
+    "name": "真人快打3(美)",
+    "downlink": "/media/nes/5876/Mortal_Kombat_3_U.zip",
+    "url": "http://nesyouxi.net/nes/5876/"
+  },
+  {
+    "name": "真人快打3(欧)",
+    "downlink": "/media/nes/5876/Mortal_Kombat_3_E.zip",
+    "url": "http://nesyouxi.net/nes/5876/"
+  },
+  {
+    "name": "武士魂(侍魂)(中文)",
+    "downlink": "/media/nes/632/%E6%AD%A6%E5%A3%AB%E9%AD%82%E4%BE%8D%E9%AD%82%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/632/"
+  },
+  {
+    "name": "星际武士(中文)",
+    "downlink": "/media/nes/1315/%E6%98%9F%E9%99%85%E6%AD%A6%E5%A3%AB%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1315/"
+  },
+  {
+    "name": "七龙珠-超武斗传(日)",
+    "downlink": "/media/nes/5237/Dragon_Ball_Z_-_Super_Butouden_J.zip",
+    "url": "http://nesyouxi.net/nes/5237/"
+  },
+  {
+    "name": "七龙珠-超武斗传(法)",
+    "downlink": "/media/nes/5237/Dragon_Ball_Z_-_Super_Butouden_F.zip",
+    "url": "http://nesyouxi.net/nes/5237/"
+  },
+  {
+    "name": "七龙珠-武斗传(法)",
+    "downlink": "/media/nes/6194/Dragon_Ball_Z_-_La_Legende_Saien_F.zip",
+    "url": "http://nesyouxi.net/nes/6194/"
+  },
+  {
+    "name": "七龙珠-超次元战记(法)",
+    "downlink": "/media/nes/6194/Dragon_Ball_Z_-_Hyper_Dimension_F.zip",
+    "url": "http://nesyouxi.net/nes/6194/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (美)",
+    "downlink": "/media/nes/5837/Street_Fighter_II_Turbo_-_Hyper_Fighting_U.zip",
+    "url": "http://nesyouxi.net/nes/5837/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 (日)",
+    "downlink": "/media/nes/5837/Street_Fighter_II_Turbo_-_Hyper_Fighting_J.zip",
+    "url": "http://nesyouxi.net/nes/5837/"
+  },
+  {
+    "name": "街头霸王/街霸2-加强版 1.1版 (欧)",
+    "downlink": "/media/nes/5837/Street_Fighter_II_Turbo_-_Hyper_Fighting_E_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/5837/"
+  },
+  {
+    "name": "少年街霸’97Zero2(中文)",
+    "downlink": "/media/nes/901/%E5%B0%91%E5%B9%B4%E8%A1%97%E9%9C%B8_97Zero2%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/901/"
+  },
+  {
+    "name": "真人快打3特别版(中文)",
+    "downlink": "/media/nes/1526/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%933%E7%89%B9%E5%88%AB%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1526/"
+  },
+  {
+    "name": "街头霸王/街霸2 (美)",
+    "downlink": "/media/nes/6200/Street_Fighter_II_-_The_World_Warrior_U.zip",
+    "url": "http://nesyouxi.net/nes/6200/"
+  },
+  {
+    "name": "街头霸王/街霸2 (日)",
+    "downlink": "/media/nes/6200/Street_Fighter_II_-_The_World_Warrior_J.zip",
+    "url": "http://nesyouxi.net/nes/6200/"
+  },
+  {
+    "name": "街头霸王/街霸2 (欧)",
+    "downlink": "/media/nes/6200/Street_Fighter_II_-_The_World_Warrior_E.zip",
+    "url": "http://nesyouxi.net/nes/6200/"
+  },
+  {
+    "name": "飞龙之拳特别篇",
+    "downlink": "/media/nes/1413/%E9%A3%9E%E9%BE%99%E4%B9%8B%E6%8B%B3%E7%89%B9%E5%88%AB%E7%AF%87.nes",
+    "url": "http://nesyouxi.net/nes/1413/"
+  },
+  {
+    "name": "真人快打2特别版(中文)",
+    "downlink": "/media/nes/1164/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%932%E7%89%B9%E5%88%AB%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1164/"
+  },
+  {
+    "name": "饿狼传说(日)",
+    "downlink": "/media/nes/5856/Garou_Densetsu_-_Shukumei_no_Tatakai_J.zip",
+    "url": "http://nesyouxi.net/nes/5856/"
+  },
+  {
+    "name": "饿狼传说(美)",
+    "downlink": "/media/nes/5856/Fatal_Fury_U.zip",
+    "url": "http://nesyouxi.net/nes/5856/"
+  },
+  {
+    "name": "饿狼传说(欧)",
+    "downlink": "/media/nes/5856/Fatal_Fury_E.zip",
+    "url": "http://nesyouxi.net/nes/5856/"
+  },
+  {
+    "name": "真人快打3-60人特别版(中文)",
+    "downlink": "/media/nes/1300/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%933-60%E4%BA%BA%E7%89%B9%E5%88%AB%E7%89%88%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1300/"
+  },
+  {
+    "name": "真人快打3(欧)",
+    "downlink": "/media/nes/5306/Mortal_Kombat_3_E.zip",
+    "url": "http://nesyouxi.net/nes/5306/"
+  },
+  {
+    "name": "真人快打3(美)",
+    "downlink": "/media/nes/5306/Mortal_Kombat_3_U.zip",
+    "url": "http://nesyouxi.net/nes/5306/"
+  },
+  {
+    "name": "侍魂(美)",
+    "downlink": "/media/nes/5810/Samurai_Shodown_U.zip",
+    "url": "http://nesyouxi.net/nes/5810/"
+  },
+  {
+    "name": "侍魂(欧)",
+    "downlink": "/media/nes/5810/Samurai_Shodown_E.zip",
+    "url": "http://nesyouxi.net/nes/5810/"
+  },
+  {
+    "name": "饿狼传说1.1(日)",
+    "downlink": "/media/nes/6034/Garou_Densetsu_2_-_Aratanaru_Tatakai_J_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/6034/"
+  },
+  {
+    "name": "饿狼传说(美)",
+    "downlink": "/media/nes/6034/Fatal_Fury_2_U.zip",
+    "url": "http://nesyouxi.net/nes/6034/"
+  },
+  {
+    "name": "饿狼传说2(欧)",
+    "downlink": "/media/nes/6034/Fatal_Fury_2_E.zip",
+    "url": "http://nesyouxi.net/nes/6034/"
+  },
+  {
+    "name": "快乐机器人格斗",
+    "downlink": "/media/nes/752/%E5%BF%AB%E4%B9%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A0%BC%E6%96%97.nes",
+    "url": "http://nesyouxi.net/nes/752/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(法)",
+    "downlink": "/media/nes/6035/Dragon_Ball_Z_-_Ultime_Menace_F.zip",
+    "url": "http://nesyouxi.net/nes/6035/"
+  },
+  {
+    "name": "七龙珠(韩)",
+    "downlink": "/media/nes/6035/Dragon_Ball_Z_-_Chomutujeon_K.zip",
+    "url": "http://nesyouxi.net/nes/6035/"
+  },
+  {
+    "name": "七龙珠-超武斗传3(日)",
+    "downlink": "/media/nes/6035/Dragon_Ball_Z_-_Super_Butouden_3_J.zip",
+    "url": "http://nesyouxi.net/nes/6035/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(美)",
+    "downlink": "/media/nes/5133/Ranma_1-2_-_Hard_Battle_U.zip",
+    "url": "http://nesyouxi.net/nes/5133/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(日)",
+    "downlink": "/media/nes/5133/Ranma_1-2_-_Bakuretsu_Rantou_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/5133/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(法)",
+    "downlink": "/media/nes/5133/Ranma_1-2_F.zip",
+    "url": "http://nesyouxi.net/nes/5133/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(欧)",
+    "downlink": "/media/nes/5133/Ranma_1-2_E.zip",
+    "url": "http://nesyouxi.net/nes/5133/"
+  },
+  {
+    "name": "超级中国人格斗 (日)",
+    "downlink": "/media/nes/5508/Super_Chinese_Fighter_J.zip",
+    "url": "http://nesyouxi.net/nes/5508/"
+  },
+  {
+    "name": "饿狼传说(日)",
+    "downlink": "/media/nes/4753/Garou_Densetsu_-_Shukumei_no_Tatakai_J.zip",
+    "url": "http://nesyouxi.net/nes/4753/"
+  },
+  {
+    "name": "饿狼传说(美)",
+    "downlink": "/media/nes/4753/Fatal_Fury_U.zip",
+    "url": "http://nesyouxi.net/nes/4753/"
+  },
+  {
+    "name": "饿狼传说(欧)",
+    "downlink": "/media/nes/4753/Fatal_Fury_E.zip",
+    "url": "http://nesyouxi.net/nes/4753/"
+  },
+  {
+    "name": "天下第一武士",
+    "downlink": "/media/nes/1658/%E5%A4%A9%E4%B8%8B%E7%AC%AC%E4%B8%80%E6%AD%A6%E5%A3%AB.nes",
+    "url": "http://nesyouxi.net/nes/1658/"
+  },
+  {
+    "name": "街头霸王/街霸-ZERO2 (日)",
+    "downlink": "/media/nes/4938/Street_Fighter_Zero_2_J.zip",
+    "url": "http://nesyouxi.net/nes/4938/"
+  },
+  {
+    "name": "街头霸王/街霸2 (美)",
+    "downlink": "/media/nes/4938/Street_Fighter_Alpha_2_U.zip",
+    "url": "http://nesyouxi.net/nes/4938/"
+  },
+  {
+    "name": "街头霸王/街霸2 (欧)",
+    "downlink": "/media/nes/4938/Street_Fighter_Alpha_2_E.zip",
+    "url": "http://nesyouxi.net/nes/4938/"
+  },
+  {
+    "name": "变种格斗2(美)",
+    "downlink": "/media/nes/5369/Clay_Fighter_2_-_Judgment_Clay_U.zip",
+    "url": "http://nesyouxi.net/nes/5369/"
+  },
+  {
+    "name": "侍魂-测试版 (日)",
+    "downlink": "/media/nes/5592/Samurai_Spirits_J.zip",
+    "url": "http://nesyouxi.net/nes/5592/"
+  },
+  {
+    "name": "真人快打2(中文)",
+    "downlink": "/media/nes/1341/%E7%9C%9F%E4%BA%BA%E5%BF%AB%E6%89%932%E4%B8%AD%E6%96%87.nes",
+    "url": "http://nesyouxi.net/nes/1341/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(美)",
+    "downlink": "/media/nes/4848/Ranma_1-2_-_Hard_Battle_U.zip",
+    "url": "http://nesyouxi.net/nes/4848/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(日)",
+    "downlink": "/media/nes/4848/Ranma_1-2_-_Bakuretsu_Rantou_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/4848/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(法)",
+    "downlink": "/media/nes/4848/Ranma_1-2_F.zip",
+    "url": "http://nesyouxi.net/nes/4848/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(欧)",
+    "downlink": "/media/nes/4848/Ranma_1-2_E.zip",
+    "url": "http://nesyouxi.net/nes/4848/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(美)",
+    "downlink": "/media/nes/5398/Ranma_1-2_-_Hard_Battle_U.zip",
+    "url": "http://nesyouxi.net/nes/5398/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(日)",
+    "downlink": "/media/nes/5398/Ranma_1-2_-_Bakuretsu_Rantou_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/5398/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(法)",
+    "downlink": "/media/nes/5398/Ranma_1-2_F.zip",
+    "url": "http://nesyouxi.net/nes/5398/"
+  },
+  {
+    "name": "乱马1/2爆裂乱斗篇(欧)",
+    "downlink": "/media/nes/5398/Ranma_1-2_E.zip",
+    "url": "http://nesyouxi.net/nes/5398/"
+  },
+  {
+    "name": "乱马1/2村內激斗篇(日)",
+    "downlink": "/media/nes/6118/Ranma_1-2_-_Chounai_Gekitou_Hen_J.zip",
+    "url": "http://nesyouxi.net/nes/6118/"
+  },
+  {
+    "name": "升刚机器人(美)",
+    "downlink": "/media/nes/5134/Rise_of_the_Robots_U.zip",
+    "url": "http://nesyouxi.net/nes/5134/"
+  },
+  {
+    "name": "升刚机器人(日)",
+    "downlink": "/media/nes/5134/Rise_of_the_Robots_J.zip",
+    "url": "http://nesyouxi.net/nes/5134/"
+  },
+  {
+    "name": "升刚机器人(欧)",
+    "downlink": "/media/nes/5134/Rise_of_the_Robots_E.zip",
+    "url": "http://nesyouxi.net/nes/5134/"
+  },
+  {
+    "name": "格斗大师-究极之战士(日)",
+    "downlink": "/media/nes/6141/Battle_Master_-_Kyuukyoku_no_Senshitachi_J.zip",
+    "url": "http://nesyouxi.net/nes/6141/"
+  },
+  {
+    "name": "英雄榜 (美)",
+    "downlink": "/media/nes/4811/World_Heroes_U.zip",
+    "url": "http://nesyouxi.net/nes/4811/"
+  },
+  {
+    "name": "英雄榜 (日)",
+    "downlink": "/media/nes/4811/World_Heroes_J.zip",
+    "url": "http://nesyouxi.net/nes/4811/"
+  },
+  {
+    "name": "英雄榜 (欧)",
+    "downlink": "/media/nes/4811/World_Heroes_E.zip",
+    "url": "http://nesyouxi.net/nes/4811/"
+  },
+  {
+    "name": "英雄榜2 (美)",
+    "downlink": "/media/nes/6183/World_Heroes_2_U.zip",
+    "url": "http://nesyouxi.net/nes/6183/"
+  },
+  {
+    "name": "英雄榜2 (日)",
+    "downlink": "/media/nes/6183/World_Heroes_2_J.zip",
+    "url": "http://nesyouxi.net/nes/6183/"
+  },
+  {
+    "name": "饿狼传说特别版(日)",
+    "downlink": "/media/nes/5098/Garou_Densetsu_Special_J.zip",
+    "url": "http://nesyouxi.net/nes/5098/"
+  },
+  {
+    "name": "饿狼传说特别版(美)",
+    "downlink": "/media/nes/5098/Fatal_Fury_Special_U.zip",
+    "url": "http://nesyouxi.net/nes/5098/"
+  },
+  {
+    "name": "饿狼传说特别版(欧)[F207]",
+    "downlink": "/media/nes/5098/Fatal_Fury_Special_E_F207.zip",
+    "url": "http://nesyouxi.net/nes/5098/"
+  },
+  {
+    "name": "饿狼传说特别版(日)",
+    "downlink": "/media/nes/5809/Garou_Densetsu_Special_J.zip",
+    "url": "http://nesyouxi.net/nes/5809/"
+  },
+  {
+    "name": "饿狼传说特别版(美)",
+    "downlink": "/media/nes/5809/Fatal_Fury_Special_U.zip",
+    "url": "http://nesyouxi.net/nes/5809/"
+  },
+  {
+    "name": "饿狼传说特别版(欧)[F207]",
+    "downlink": "/media/nes/5809/Fatal_Fury_Special_E_F207.zip",
+    "url": "http://nesyouxi.net/nes/5809/"
+  },
+  {
+    "name": "真人快打2(欧)(1.1)",
+    "downlink": "/media/nes/5036/Mortal_Kombat_II_E_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/5036/"
+  },
+  {
+    "name": "真人快打2(美)(1.1)",
+    "downlink": "/media/nes/5036/Mortal_Kombat_II_U_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/5036/"
+  },
+  {
+    "name": "饿狼传说1.1(日)",
+    "downlink": "/media/nes/5274/Garou_Densetsu_2_-_Aratanaru_Tatakai_J_v1.1.zip",
+    "url": "http://nesyouxi.net/nes/5274/"
+  },
+  {
+    "name": "饿狼传说(美)",
+    "downlink": "/media/nes/5274/Fatal_Fury_2_U.zip",
+    "url": "http://nesyouxi.net/nes/5274/"
+  },
+  {
+    "name": "饿狼传说2(欧)",
+    "downlink": "/media/nes/5274/Fatal_Fury_2_E.zip",
+    "url": "http://nesyouxi.net/nes/5274/"
+  },
+  {
+    "name": "变种格斗TE(美)",
+    "downlink": "/media/nes/4772/Clay_Fighter_-_Tournament_Edition_U.zip",
+    "url": "http://nesyouxi.net/nes/4772/"
+  },
+  {
+    "name": "英雄榜 (美)",
+    "downlink": "/media/nes/5786/World_Heroes_U.zip",
+    "url": "http://nesyouxi.net/nes/5786/"
+  },
+  {
+    "name": "英雄榜 (日)",
+    "downlink": "/media/nes/5786/World_Heroes_J.zip",
+    "url": "http://nesyouxi.net/nes/5786/"
+  },
+  {
+    "name": "英雄榜 (欧)",
+    "downlink": "/media/nes/5786/World_Heroes_E.zip",
+    "url": "http://nesyouxi.net/nes/5786/"
+  },
+  {
+    "name": "英雄榜 (美)",
+    "downlink": "/media/nes/5188/World_Heroes_U.zip",
+    "url": "http://nesyouxi.net/nes/5188/"
+  },
+  {
+    "name": "英雄榜 (日)",
+    "downlink": "/media/nes/5188/World_Heroes_J.zip",
+    "url": "http://nesyouxi.net/nes/5188/"
+  },
+  {
+    "name": "英雄榜 (欧)",
+    "downlink": "/media/nes/5188/World_Heroes_E.zip",
+    "url": "http://nesyouxi.net/nes/5188/"
+  },
+  {
+    "name": "升刚机器人(美)",
+    "downlink": "/media/nes/5864/Rise_of_the_Robots_U.zip",
+    "url": "http://nesyouxi.net/nes/5864/"
+  },
+  {
+    "name": "升刚机器人(日)",
+    "downlink": "/media/nes/5864/Rise_of_the_Robots_J.zip",
+    "url": "http://nesyouxi.net/nes/5864/"
+  },
+  {
+    "name": "升刚机器人(欧)",
+    "downlink": "/media/nes/5864/Rise_of_the_Robots_E.zip",
+    "url": "http://nesyouxi.net/nes/5864/"
+  },
+  {
+    "name": "升刚机器人(美)",
+    "downlink": "/media/nes/5020/Rise_of_the_Robots_U.zip",
+    "url": "http://nesyouxi.net/nes/5020/"
+  },
+  {
+    "name": "升刚机器人(日)",
+    "downlink": "/media/nes/5020/Rise_of_the_Robots_J.zip",
+    "url": "http://nesyouxi.net/nes/5020/"
+  },
+  {
+    "name": "升刚机器人(欧)",
+    "downlink": "/media/nes/5020/Rise_of_the_Robots_E.zip",
+    "url": "http://nesyouxi.net/nes/5020/"
+  }
+]

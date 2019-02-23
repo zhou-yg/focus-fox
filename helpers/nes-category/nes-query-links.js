@@ -24,7 +24,7 @@ const categoryNames = [
 const MAX = 14;
 
 // const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/category-${i}.json`)).toString()))]
-const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/links-${i}.json`)).toString()))]
+const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/category-${i}.json`)).toString()))]
 const getJson2 = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/links-${i}-errors.json`)).toString()))]
 const getPageUrl = (path) => /^http/.test(path) ? path : `http://nesyouxi.net${path}`;
 
@@ -155,7 +155,7 @@ async function getLinks(index) {
   console.log(`====== ${index} end ======`);
 }
 
-let i = 2;
+let i = 3;
 // getLinks(2);
 (async function () {
   while (i <= MAX) {
