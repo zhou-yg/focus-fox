@@ -22,10 +22,10 @@ const categoryNames = [
 ];
 
 const MAX = 14;
-let i = 2;
 
 // const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/category-${i}.json`)).toString()))]
-const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/links-${i}-errors.json`)).toString()))]
+const getJson = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/links-${i}.json`)).toString()))]
+const getJson2 = (i) => [...new Set(JSON.parse(fs.readFileSync(path.join(__dirname, `./category-all/links-${i}-errors.json`)).toString()))]
 const getPageUrl = (path) => /^http/.test(path) ? path : `http://nesyouxi.net${path}`;
 
 function sleep(t = 1000) {
@@ -122,7 +122,7 @@ async function getOneLink(url, end, error) {
 }
 
 async function getLinks(index) {
-  const urlArr = getJson(index).map(getPageUrl);
+  const urlArr = (index === 2 ? getJson2(index) : getJson(index)).map(getPageUrl);
 
   let i = 0;
   let r = [];
@@ -155,11 +155,12 @@ async function getLinks(index) {
   console.log(`====== ${index} end ======`);
 }
 
-getLinks(2);
-// (async function () {
-//   while (i <= MAX) {
-//     await getLinks(i);
-//     await sleep();
-//     i++;
-//   }
-// })();
+let i = 2;
+// getLinks(2);
+(async function () {
+  while (i <= MAX) {
+    await getLinks(i);
+    await sleep();
+    i++;
+  }
+})();
