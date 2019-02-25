@@ -1,12 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const jsonFileArr = fs.readdirSync(__dirname).filter(f => /\.json$/.test(f)).map(f => {
-  return JSON.parse(fs.readFileSync(f).toString());
+const dir = path.join(__dirname, 'roms-download-links');
+
+const jsonFileArr = fs.readdirSync(dir).filter(f => /\d\.json$/.test(f)).map((f, i) => {
+  let arr = JSON.parse(fs.readFileSync(path.join(dir, f)).toString());
+  arr.forEach(obj => obj.category = i + 1);
+  return arr;
 }).reduce((p, n) => p.concat(n));
 
 const jsonFileSetArr = [...new Set(jsonFileArr)];
 
 console.log(`jsonFileSetArr.length:`, jsonFileSetArr.length);
 
-fs.writeFileSync(`category-all.json`, JSON.stringify(jsonFileSetArr, null, 2));
+fs.writeFileSync(path.join(dir, `links-all.json`), JSON.stringify(jsonFileSetArr, null, 2));
