@@ -5,7 +5,7 @@ const moment = require('moment');
 
 const MAX = 14;
 
-let i = 14;
+let i = 1;
 let category = (i = 1, p = 1) => `http://nesyouxi.net/category/${i}/page/${p}`;
 
 function sleep(t = 1000) {
@@ -27,7 +27,7 @@ function getCategory(categoryIndex) {
       return;
     }
 
-    console.log(`getPage: ${page} < ${maxPage}`, moment());
+    console.log(`${categoryIndex} getPage: ${page} < ${maxPage}`, moment());
 
     const url = category(categoryIndex, page);
     try {
@@ -47,10 +47,29 @@ function getCategory(categoryIndex) {
           }
           const $ = cheerio.load(body);
 
+
+          let myHref;
+          $('.row.w-100 > div .card-body a').map((_, a) => {
+            const href = a.attribs.href;
+            if (/nes\/\d+/.test(href)) {
+              myHref = href;
+            }
+          });
+          let mySrc;
+          $('.row.w-100 > div img').map((_, a) => {
+            const src = a.attribs.src;
+            mySrc = src;
+          });
+
+          nesPages.push({
+            img: mySrc,
+            href: myHref,
+          });
+
+
           $('.col-sm-8.main-left a').map((_, a) => {
             const href = a.attribs.href;
             if (/nes\/\d+/.test(href)) {
-              nesPages.push(href);
             } else if (/page\/\d+/.test(href)){
               let r = href.match(/page\/(\d+)/);
               if (r) {
@@ -67,9 +86,9 @@ function getCategory(categoryIndex) {
     } catch (e) {
       console.log(e);
       erros.push(url);
-      fs.writeFileSync(`category-${categoryIndex}.erros.json`, JSON.stringify(erros, null ,2));
+      fs.writeFileSync(`category-imgs/category-${categoryIndex}.erros.json`, JSON.stringify(erros, null ,2));
     }
-    fs.writeFileSync(`category-${categoryIndex}.json`, JSON.stringify(nesPages, null ,2));
+    fs.writeFileSync(`category-imgs/category-${categoryIndex}.json`, JSON.stringify(nesPages, null ,2));
 
     await sleep();
 
@@ -78,7 +97,7 @@ function getCategory(categoryIndex) {
 
   return new Promise(resolve => {
     getPage(() => {
-      fs.writeFileSync(`category-${categoryIndex}.json`, JSON.stringify(nesPages, null ,2));
+      fs.writeFileSync(`category-imgs/category-${categoryIndex}.json`, JSON.stringify(nesPages, null ,2));
       console.log('====== end ===== ');
       resolve();
     });
@@ -91,6 +110,7 @@ function getCategory(categoryIndex) {
     await sleep();
   }
 })();
+
 // getCategory(i);
 
 // $ = cheerio.load(fs.readFileSync('test.html').toString());

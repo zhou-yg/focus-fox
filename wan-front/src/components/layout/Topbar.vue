@@ -2,10 +2,10 @@
   <div class="topbar">
     <div class="navbar">
       <div class="logo-box">
-        <!-- <img class="logo" src="../../assets/logo-wan.svg" alt="">
+        <img class="logo" src="../../assets/logo-wan.svg" alt="">
         <span>
           Fox Wan
-        </span> -->
+        </span>
       </div>
       <div class="profile">
         <span class="avatar">
@@ -67,13 +67,26 @@ export default {
   .content {
     margin-top: var(--margin);
     width: 100%;
+
     position: absolute;
     left: 0;
     top: var(--navbar-height);
     bottom: var(--margin);
+
+
+    display: flex;
   }
   .left-nav-box {
     height: 100%;
+    border: 1px solid #fff;
+    > .left-nav {
+      border: 0;
+    }
+  }
+  .right-content {
+    margin-left: 10px;
+    flex: 1;
+    border: 1px solid #fff;
   }
 }
 .navbar {

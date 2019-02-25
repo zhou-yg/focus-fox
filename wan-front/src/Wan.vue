@@ -54,9 +54,16 @@ ul {
     display: inline-block;
     vertical-align: middle;
   }
+
+  &:hover {
+    color: #666;
+    &:after {
+      border-color: transparent transparent transparent #666;
+    }
+  }
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: inherit;
 }
 </style>

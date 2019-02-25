@@ -29,12 +29,12 @@ export default Cpt;
 </script>
 
 <template lang="html">
-  <div class="main-index">
-    main-index
+  <div class="main-category">
+    main-category
   </div>
 </template>
 
 <style lang="css">
-.main-index{
+.main-category{
 }
 </style>

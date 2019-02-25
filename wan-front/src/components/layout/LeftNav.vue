@@ -41,7 +41,7 @@ const Cpt = Vue.extend({
             return {
               name,
               index,
-              href: '',
+              href: `/wan/category?type=${index}`,
             };
           }),
         },
@@ -66,18 +66,18 @@ export default Cpt;
 <template lang="html">
   <div class="left-nav">
     <div class="row" v-for="item in leftNavConfig">
-      <a :href="item.href" v-if="item.type === 'header'" >
-        <div class="header">
-          <span>
-            {{item.name}}
-          </span>
+      <router-link :to="item.href" v-if="item.type === 'header'" >
+        <div class="header pointer">
+          {{item.name}}
         </div>
-      </a>
+      </router-link>
       <div  v-if="item.type === 'header-top'" class="header-top">
         {{item.name}}
         <div class="bottom-list">
           <ul>
-            <li class="pointer" v-for="childItem in item.children">{{childItem.name}}</li>
+            <li class="pointer" v-for="childItem in item.children">
+              <router-link :to="childItem.href">{{childItem.name}}</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -87,23 +87,19 @@ export default Cpt;
 
 <style scoped lang="css">
 .left-nav {
-  width: 200px;
+  width: 220px;
   height: 100%;
   border: 1px solid #fff;
 
   .row {
     padding: 16px;
     border-bottom: 1px solid #fff;
+    font-size: 16px;
 
     /* case 1 */
     .header {
       &:after {
-        content: '';
-        width: 0px;
-        height: 0px;
-        border: 4px solid;
-        border-color: transparent transparent transparent #ffffff;
-        display: inline-block;
+        border-width: 4px;
         float: right;
         position: relative;
         top: 4px;
