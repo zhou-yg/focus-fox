@@ -16,12 +16,21 @@ const Cpt = Vue.extend({
   computed: {
 
   },
+  created () {
+    this.getList();
+  },
   mounted () {
     this.$nextTick(() => {
 
     });
   },
   methods: {
+    getList () {
+      let type = this.$route.query.type;
+      this.$api.wan.category.list({type}).then(res => {
+        console.log(res.data);
+      });
+    },
   },
 });
 

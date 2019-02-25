@@ -22,7 +22,7 @@ export default function createRouter () {
           },
           {
             path: 'category',
-            component: Category,            
+            component: Category,
           },
         ],
       },
