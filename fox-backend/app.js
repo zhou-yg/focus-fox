@@ -20,6 +20,7 @@ var app = new koa();
 
 const router = require('./router/');
 const testUserMiddleware = require('./middlewares/testUser');
+const modelsMiddleware = require('./middlewares/models');
 
 app.use(logger());
 
@@ -71,6 +72,7 @@ app.use(function(ctx, next) {
 });
 
 app.use(testUserMiddleware);
+app.use(modelsMiddleware);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
