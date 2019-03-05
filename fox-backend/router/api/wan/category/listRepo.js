@@ -10,7 +10,7 @@ module.exports = async function (ctx, next) {
 
   if (nesJson[type]) {
     all = nesJson[type].length;
-    data = nesJson[type].slice(pageSize * page, pageSize);
+    data = nesJson[type].slice(pageSize * (page - 1), pageSize * (page - 1) + pageSize);
   }
 
   ctx.body = {

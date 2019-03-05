@@ -7,7 +7,7 @@ class DB {
   }
   base (method) {
     return (arg, doc = {}) => {
-      return new Promise(resolve => {
+      return new Promise((resolve, reject) => {
         request({
           method: 'post',
           url: `${HOST}/${this.dbName}/${method}`,

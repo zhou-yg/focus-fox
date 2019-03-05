@@ -6,8 +6,11 @@ module.exports = async function (ctx, next) {
   const {data} = await ctx.models.category.find({
     category: type,
   });
+
+  const filterData = data.filter(obj => !obj.hidden);
+
   ctx.body = {
-    all: data.length,
-    data: data.slice(pageSize * page, pageSize),
+    all: filterData.length,
+    data: filterData.slice(pageSize * (page - 1), pageSize * (page - 1) + pageSize),
   };
 }
