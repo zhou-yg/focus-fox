@@ -3,6 +3,32 @@ const fs = require('fs');
 
 const request = require('request');
 
+const staticHost = `http://static.nomiwan.com:10800`;
+const staticHostPublic = `http://static.nomiwan.com:10800/public`;
+
+function cacheFileExists(cachePath, remoteRelativePath) {
+  if (fs.existsSync(cachePath)) {
+    let cacheBuffer = fs.readFileSync(cachePath);
+    return new Promise((resolve, reject) => {
+      request({
+        url: `${staticHost}/status?path=${encodeURIComponent(remoteRelativePath)}`,
+        method: 'GET',
+      }, (err, res, body) => {
+        if (err) {
+          reject(err);
+        } else {
+          let {size} = JSON.parse(body);
+          resolve(size >0 && size === cacheBuffer.length);
+        }
+      });
+    });
+  }
+  return false;
+}
+//@TEST
+// let r = cacheFileExists(path.join(__ROOT_CACHE__, '2009101212583046327.nes'), '/nes/1/2009101212583046327.nes');
+// r.then(v => console.log(v));
+
 function download (url) {
   return request({
     method: 'get',
@@ -28,12 +54,43 @@ function download (url) {
 function upload (file, dest, cb) {
   return request({
     method: 'post',
-    url: `http://207.148.114.234:10800/upload`,
+    url: `${staticHost}/upload`,
     formData: {
       file,
       dest,
     },
   }, cb);
+}
+
+async function downAndUpload (downlink, remoteStaticPath) {
+  let {base} = path.parse(downlink);
+  let cacheFilePath = path.join(__ROOT_CACHE__, base);
+  let remoteStaticPathBase = `${remoteStaticPath}/${base}`;
+  let isCacheFileExists = await cacheFileExists(cacheFilePath, remoteStaticPathBase);
+
+  console.log(isCacheFileExists, remoteStaticPathBase, downlink);
+  if (!isCacheFileExists) {
+    let cws = fs.createWriteStream(cacheFilePath);
+    let downs = download(downlink);
+    downs.pipe(cws);
+
+    console.log(`add 0.0`);
+    await new Promise((resolve) => {
+      cws.on('finish', () => {
+        resolve();
+      });
+    });
+    console.log(`add 1`);
+    await new Promise(resolve => {
+        upload(fs.createReadStream(path.join(__ROOT_CACHE__, base)), remoteStaticPath, (err, res, body) => {
+          console.log(body);
+          resolve();
+        });
+    });
+  } else {
+    console.log(`add 0.1`);
+  }
+  return remoteStaticPathBase;
 }
 
 module.exports = {
@@ -45,34 +102,19 @@ module.exports = {
     if (old.data.length > 0) {
       ctx.body = `${name} ${downlink} already exists`;
     } else {
-      let {base} = path.parse(downlink);
-      // let cws = fs.createWriteStream(path.join(__ROOT_CACHE__, base));
-      // let downs = download(downlink);
-      // downs.pipe(cws);
-      //
-      // console.log(`add 0`);
-      // await new Promise((resolve) => {
-      //   cws.on('finish', () => {
-      //     resolve();
-      //   });
-      //   cws.on('drain', () => {
-      //     console.log(`drain`);
-      //   });
-      // });
 
-      console.log(`add 1`);
-      await new Promise(resolve => {
-          upload(fs.createReadStream(path.join(__ROOT_CACHE__, base)), `/${type}/${category}`, (err, res, body) => {
-            console.log(body);
-            resolve();
-          });
-      });
-      console.log(`add 2`);
+      const [fileResource, imgResource] = await Promise.all([
+        downAndUpload(downlink, `${type}/${category}/roms`),
+        downAndUpload(img, `${type}/${category}/imgs`),
+      ]);
+
+      console.log(`add 2`, fileResource, imgResource);
       let r3 = await ctx.models.category.insertIfNotExists({
         downlink,
       }, {
         name, downlink,category, url, img,
-        fileResource: `/${type}/${category}/${base}`,
+        fileResource,
+        imgResource,
       });
       console.log(`add 3`, r3);
       ctx.body = 'done';
