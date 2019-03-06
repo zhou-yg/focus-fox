@@ -1,0 +1,41 @@
+.left-nav {
+  width: 220px;
+  height: 100%;
+  border: 1px solid #fff;
+
+  .row {
+    padding: 16px;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+
+    /* case 1 */
+    .header {
+      &:after {
+        border-width: 4px;
+        float: right;
+        position: relative;
+        top: 4px;
+      }
+    }
+    /* case 2 */
+    .header-top {
+
+    }
+    .bottom-list {
+      margin-top: 10px;
+      padding-left: 20px;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        > li {
+          width: 50%;
+          margin-top: 10px;
+        }
+        > li:nth-child(2n) {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
