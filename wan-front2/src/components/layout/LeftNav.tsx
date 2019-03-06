@@ -60,17 +60,19 @@ const leftNavConfig: Array<LeftNavItem> = [
 function LeftNav() {
   return (
     <div className="left-nav">
-      <div className="row" v-for="item in leftNavConfig">
-        {leftNavConfig.map(item => {
-          if (item.type === 'header') {
-            return (
-              <Link key={item.href} to={item.href}>
+      {leftNavConfig.map(item => {
+        if (item.type === 'header') {
+          return (
+            <div key={item.href} className="row">
+              <Link  to={item.href}>
                 <div className="header pointer">{item.name}</div>
               </Link>
-            );
-          } else if (item.type === 'header-top') {
-            return (
-              <div key={item.name} className="header-top">
+            </div>
+          );
+        } else if (item.type === 'header-top') {
+          return (
+            <div key={item.name} className="row">
+              <div  className="header-top">
                 {item.name}
                 <div className="bottom-list">
                   <ul>
@@ -84,10 +86,10 @@ function LeftNav() {
                   </ul>
                 </div>
               </div>
-            );
-          }
-        })}
-      </div>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 }

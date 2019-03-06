@@ -2,14 +2,16 @@ import './TopBar.css';
 import React from 'react';
 import LeftNav from './LeftNav';
 import routerConfig from '../../router/config';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 
-function TopBar(props: any) {
+import logo from '../../assets/logo-wan.svg';
+
+function TopBar() {
   return (
     <div className="topbar">
       <div className="navbar">
         <div className="logo-box">
-          <img className="logo" src="../../assets/logo-wan.svg" alt="" />
+          <img className="logo" src={logo} alt="" /> &nbsp;
           <span>
             Fox Wan
           </span>
