@@ -35,6 +35,11 @@ const Cpt = Vue.extend({
           href: '',
         },
         {
+          type: 'header',
+          name: '游戏库',
+          href: '/wan/repo',
+        },
+        {
           type: 'header-top',
           name: '游戏分类',
           children: categoryNames.map((name, index) => {
