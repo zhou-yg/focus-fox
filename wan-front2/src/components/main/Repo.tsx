@@ -28,7 +28,14 @@ function Repo() {
               <div className="img-box">
                 <img src={item.img} />
               </div>
-              <div className="name-box">{item.name}</div>
+              <div className="row">
+                <span className="pre">名字：</span>
+                <span className="value">{item.name}</span>
+              </div>
+              <div className="row">
+                <span className="pre">资源：</span>
+                <span className="value">{item.downBase}</span>
+              </div>
             </li>
           );
         })}

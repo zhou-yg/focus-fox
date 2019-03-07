@@ -60,7 +60,7 @@ function SearchBar(props: SearchBarProps) {
       &nbsp;
       &nbsp;
       状态过滤：
-      <input type="checkbox" checked={true} />
+      <input type="checkbox" defaultChecked={true} />
       已上架
     </div>
   );

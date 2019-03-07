@@ -12,6 +12,7 @@ interface WanCategoryAdd {
   "category": CategoryType;
   "url": string,
   "img": string;
+  downBase: string;
 }
 interface WanCategoryQuery {
   name:string;
@@ -70,7 +71,7 @@ function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
     ...others
   }).then(res => {
     return Promise.resolve(res.data);
-  })
+  });
 }
 
 function wrapperApi (paths:Array<string>):ApiLayer1 {

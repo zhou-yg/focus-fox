@@ -36,10 +36,18 @@ const actions:AllActions = {
     http.api.wan.category.listRepo.get({
       type,
       page,
-      pageSize: 15,
+      pageSize: 10,
     }).then(({all, data}) => {
       allState.repoList.all = all;
-      allState.repoList.data = data;
+      allState.repoList.data = data.map(obj => {
+        let downBase = obj.downlink.match(/[\w]+?\.[\w]+?$/);
+        obj.downBase = downBase ? downBase[0] : '';
+        let len = obj.downBase.length;
+        if (len > 10) {
+          obj.downBase = obj.downBase.substr(len - 10, len);
+        }
+        return obj;
+      });
     });
   }
 }
