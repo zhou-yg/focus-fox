@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './assets/styles/App.css';
 import AppRouter from './router/Index';
 
 class App extends Component {

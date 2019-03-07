@@ -1,4 +1,3 @@
-import './TopBar.css';
 import React from 'react';
 import LeftNav from './LeftNav';
 import routerConfig from '../../router/config';
