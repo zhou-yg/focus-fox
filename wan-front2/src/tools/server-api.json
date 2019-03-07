@@ -1,0 +1,9 @@
+[
+  "/api/subscribe",
+  "/api/user/profile",
+  "/api/wan/category/add",
+  "/api/wan/category/hidden",
+  "/api/wan/category/list",
+  "/api/wan/category/listRepo",
+  "/api/wan/category/remove"
+]

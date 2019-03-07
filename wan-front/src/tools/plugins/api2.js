@@ -1,5 +1,4 @@
 import axios from 'axios'
-import client from 'simple-mongo-server/lib/mongoMap/client'
 // 同步backend api 下
 import apiServerJson from '../server-api.json'
 
