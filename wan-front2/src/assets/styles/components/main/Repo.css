@@ -1,0 +1,38 @@
+.main-repo {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 40px;
+
+  > ul {
+    overflow: hidden;
+  }
+  .repo-li {
+    margin: 20px;
+    float: left;
+    width: 150px;
+
+    .img-box {
+      border: 1px solid #fff;
+      width: 150px;
+      height: 100px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .name-box {
+      margin-top: 5px;
+      text-align: center;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .pagination-top {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}

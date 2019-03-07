@@ -20,42 +20,56 @@ interface WanCategoryQuery {
 interface WanCategoryPage {
   type:CategoryType;
   page:number;
-  pageSize:number;
+  pageSize ?:number;
+}
+export interface WanCategoryPageRes {
+  all: number;
+  data: Array<WanCategoryAdd>;
 }
 
-interface ApiNormal<T> {
-    get: (arg:T, config:any) => Promise<any>;
-    post: (arg:T, config:any) => Promise<any>;
+interface ApiNormal<T, U> {
+    get: (arg:T, config?:any) => Promise<U>;
+    post: (arg:T, config?:any) => Promise<U>;
+}
+
+interface UserProfile {
+  id: string;
+  name: string;
+  avatar: string;
 }
 
 interface ApiLayer1 {
   api: {
     wan: {
       category: {
-        add: ApiNormal<WanCategoryAdd>;
-        hidden: ApiNormal<WanCategoryQuery>;
-        remove: ApiNormal<WanCategoryQuery>;
-        list: ApiNormal<WanCategoryPage>;
-        listRepo: ApiNormal<WanCategoryPage>;
+        add: ApiNormal<WanCategoryAdd, string>;
+        hidden: ApiNormal<WanCategoryQuery, string>;
+        remove: ApiNormal<WanCategoryQuery, string>;
+        list: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
+        listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
       },
     },
     user: {
-      profile: ApiNormal<any>;
+      profile: ApiNormal<any, UserProfile>;
     }
   };
 }
 
-function req (path:string, arg:any, method = 'GET', others = {}) {
+function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
   path = path.replace(/^\//, '');
+
+  let k = method === 'GET' ? 'params' : 'data';
 
   return axios({
     url: `http://localhost:10666/${path}`,
     method,
-    data: arg,
+    [k]: arg,
     headers: {
       'Content-Type': 'application/json',
     },
     ...others
+  }).then(res => {
+    return Promise.resolve(res.data);
   })
 }
 

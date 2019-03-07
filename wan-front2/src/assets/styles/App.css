@@ -1,4 +1,8 @@
 @import './base.css';
 
+@import './components/basic/Pagination.css';
+
 @import './components/layout/LeftNav.css';
 @import './components/layout/TopBar.css';
+
+@import './components/main/Repo.css';

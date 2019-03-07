@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import routerConfig from './config';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import TopBar from '../components/layout/TopBar';
 
 function AppRouter () {
