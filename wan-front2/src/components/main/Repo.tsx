@@ -14,7 +14,7 @@ function Repo() {
     console.log('effect');
   });
   return (<div className="main-repo">
-
+  
     <Observer render={() => {
       return <ul>
         {repoList.data.map((item, index) => {
