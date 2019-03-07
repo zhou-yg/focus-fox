@@ -1,0 +1,9 @@
+.search-bar {
+  border-bottom: 1px solid #666;
+  padding: 10px;
+  > .select {
+    outline: 0;
+    font-size: 14px;
+    border-radius: 0;
+  }
+}

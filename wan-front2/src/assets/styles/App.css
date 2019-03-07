@@ -1,6 +1,7 @@
 @import './base.css';
 
 @import './components/basic/Pagination.css';
+@import './components/basic/SearchBar.css';
 
 @import './components/layout/LeftNav.css';
 @import './components/layout/TopBar.css';

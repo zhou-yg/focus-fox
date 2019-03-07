@@ -2,7 +2,7 @@ import axios from 'axios'
 // 同步backend api 下
 import apiServerJson from './server-api.json'
 
-type CategoryType = 1 | 2 | 3 | 4 | 5 | 6 |7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
+export type CategoryType = 1 | 2 | 3 | 4 | 5 | 6 |7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 
 interface WanCategoryAdd {
   type: 'nes' | 'gba',

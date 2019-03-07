@@ -4,7 +4,7 @@ import Repo from '../components/main/Repo';
 
 interface RouteConfigItem {
   href: string;
-  component: () => JSX.Element;
+  component: (props: any) => JSX.Element;
 }
 
 interface RouterConfig {
