@@ -1,26 +1,13 @@
 import React, {useEffect} from "react";
-import http, {WanCategoryPageRes} from 'src/tools/http';
-import { Observer, useObservable } from "mobx-react-lite";
+import { Observer } from "mobx-react-lite";
 import Pagination from 'src/components/basic/Pagination';
-
-interface WanCategoryPageRes2 extends WanCategoryPageRes {
-    page: number;
-}
+import {useAllState} from 'src/mobx/';
 
 function Repo() {
-  const repoList = useObservable<WanCategoryPageRes2>({ data: [], all: 0, page: 1 });
 
-  let getList = (page: number):any => {
-    repoList.page = page;
-    return http.api.wan.category.listRepo.get({
-      type: 1,
-      page,
-      pageSize: 15,
-    }).then(({all, data}) => {
-      repoList.all = all;
-      repoList.data = data;
-    });
-  }
+  // const repoList = useObservable<WanCategoryPageRes2>({ data: [], all: 0, page: 1 });
+  const [{repoList}, {getList}] = useAllState(['repoList']);
+
 
   useEffect(() => {
     getList(repoList.page);

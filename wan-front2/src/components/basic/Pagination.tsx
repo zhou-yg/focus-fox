@@ -2,9 +2,9 @@ import React from "react";
 
 interface PaginationProp {
   current: number;
-  onPrev ?: () => null;
-  onNext ?: () => null;
-  onChange: (target: number) => null;
+  onPrev ?: () => void;
+  onNext ?: () => void;
+  onChange: (target: number) => void;
 }
 
 function Pagination(props:PaginationProp ) {
