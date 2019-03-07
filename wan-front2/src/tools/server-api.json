@@ -5,5 +5,6 @@
   "/api/wan/category/hidden",
   "/api/wan/category/list",
   "/api/wan/category/listRepo",
-  "/api/wan/category/remove"
+  "/api/wan/category/remove",
+  "/api/wan/category/search"
 ]
