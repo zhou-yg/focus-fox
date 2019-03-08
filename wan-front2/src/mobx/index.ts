@@ -1,6 +1,6 @@
 import { useObservable } from "mobx-react-lite";
 
-import http, {WanCategoryPageRes, CategoryType} from 'src/tools/http';
+import http, {WanCategoryPageRes, CategoryType, WanCategoryAdd, WanCategoryAddPushingState} from 'src/tools/http';
 
 interface WanCategoryPageRes2 extends WanCategoryPageRes {
     page: number;
@@ -13,6 +13,7 @@ interface AllState {
 }
 interface AllActions {
   getList: (page: number, type:CategoryType) => void;
+  pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
 }
 
 type StateKey = 'repoList';
@@ -49,7 +50,13 @@ const actions:AllActions = {
         return obj;
       });
     });
-  }
+  },
+  pushNes: async (item: WanCategoryAdd) => {
+
+    await http.api.wan.category.add.post(item);
+
+    return Promise.resolve(3 as WanCategoryAddPushingState);
+  },
 }
 
 // window.test = state;

@@ -1,5 +1,6 @@
 import React, {useRef} from "react";
 import {CategoryType} from 'src/tools/http';
+import Pagination from './Pagination';
 
 interface CategoryTypeOption {
     value: CategoryType;
@@ -35,6 +36,8 @@ interface SearchBarProps {
   select:CategoryType;
   pushed?:Boolean;
   changeSelect: (value:CategoryType) => void;
+  page: number;
+  changePage: (target: number) => void;
 };
 
 function SearchBar(props: SearchBarProps) {
@@ -62,6 +65,8 @@ function SearchBar(props: SearchBarProps) {
       状态过滤：
       <input type="checkbox" defaultChecked={true} />
       已上架
+      &nbsp;
+      <Pagination onChange={props.changePage} current={props.page}/>
     </div>
   );
 }

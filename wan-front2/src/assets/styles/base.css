@@ -6,7 +6,7 @@ body {
 }
 #app {
   background-image:url(https://ojrbqzf6q.qnssl.com/2017090793986bg.png);
-  font-family: Roboto, Noto, Helvetica, Arial, sans-serif;
+  font-family: sans-serif, Roboto, Noto, Helvetica, Arial;
   font-size: 14px;
   font-family: "Helvetica Neue",Helvetica,Arial,STHeiti,"Microsoft Yahei",sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,4 +49,11 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.fr {
+  float: right;
+}
+.fl{
+  float: left;
 }

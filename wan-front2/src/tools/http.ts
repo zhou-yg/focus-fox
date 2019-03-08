@@ -4,7 +4,9 @@ import apiServerJson from './server-api.json'
 
 export type CategoryType = 1 | 2 | 3 | 4 | 5 | 6 |7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 
-interface WanCategoryAdd {
+export type WanCategoryAddPushingState = 0 | 1 | 2 | 3;
+
+export interface WanCategoryAdd {
   type: 'nes' | 'gba',
   "id": string,
   "name": string,
@@ -13,6 +15,7 @@ interface WanCategoryAdd {
   "url": string,
   "img": string;
   downBase: string;
+  onPushing: WanCategoryAddPushingState;
 }
 interface WanCategoryQuery {
   name:string;

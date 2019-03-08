@@ -30,6 +30,8 @@
       box-sizing: border-box;
       font-size: 12px;
 
+      overflow: hidden;
+
       .pre {
         vertical-align: middle;
         color: #aaa;
@@ -53,9 +55,9 @@
       white-space: nowrap;
     } */
   }
-  .pagination-top {
+  /* .pagination-top {
     position: absolute;
     right: 0px;
     bottom: 0px;
-  }
+  } */
 }

@@ -6,4 +6,8 @@
     font-size: 14px;
     border-radius: 0;
   }
+
+  .pagination-top {
+    display: inline-block;
+  }
 }
