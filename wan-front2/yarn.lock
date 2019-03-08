@@ -4931,6 +4931,10 @@ jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
 
+jsnes@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jsnes/-/jsnes-1.1.0.tgz#25ff850d473a6cc17176e03daca6cd95c877c56f"
+
 json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
