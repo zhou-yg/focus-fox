@@ -1,11 +1,14 @@
 /// <reference path="./nesEmbed.d.ts" />
 import jsnes from 'jsnes';
+
 let SCREEN_WIDTH = 256;
 let SCREEN_HEIGHT = 240;
 let FRAMEBUFFER_SIZE = SCREEN_WIDTH*SCREEN_HEIGHT;
 
-let canvas_ctx, image;
-let framebuffer_u8, framebuffer_u32;
+let canvas_ctx: any;
+let image: any;
+let framebuffer_u8:any;
+let framebuffer_u32:any;
 
 let AUDIO_BUFFERING = 512;
 let SAMPLE_COUNT = 4*1024;
@@ -37,7 +40,7 @@ function audio_remain(){
 	return (audio_write_cursor - audio_read_cursor) & SAMPLE_MASK;
 }
 
-function audio_callback(event){
+function audio_callback(event:any){
 	let dst = event.outputBuffer;
 	let len = dst.length;
 
@@ -55,7 +58,7 @@ function audio_callback(event){
 	audio_read_cursor = (audio_read_cursor + len) & SAMPLE_MASK;
 }
 
-function keyboard(callback, event){
+function keyboard(callback:any, event:KeyboardEvent){
 	let player = 1;
 	switch(event.keyCode){
 		case 38: // UP
@@ -80,8 +83,8 @@ function keyboard(callback, event){
 	}
 }
 
-function nes_init(canvas_id){
-	let canvas = document.getElementById(canvas_id);
+function nes_init(canvas_id:string){
+	let canvas:HTMLCanvasElement = document.getElementById(canvas_id) as HTMLCanvasElement;
 	canvas_ctx = canvas.getContext("2d");
 	image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -94,7 +97,7 @@ function nes_init(canvas_id){
 	framebuffer_u32 = new Uint32Array(buffer);
 
 	// Setup audio.
-	let audio_ctx = new window.AudioContext();
+	let audio_ctx:AudioContext = new AudioContext();
 	let script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);

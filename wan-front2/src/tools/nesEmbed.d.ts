@@ -1,8 +1,3 @@
-declare global {
-  interface Window {
-    AudioContext(): any;
-  }
-}
 
 declare module 'jsnes' {
 
@@ -21,11 +16,17 @@ declare module 'jsnes' {
     BUTTON_SELECT: any;
     BUTTON_START: any;
   }
+  let Controller: ControllerType;
 
-  export const Controller: ControllerType;
+
+  export const buttonDown = (player:1, btnType: any) => {};
+
 
   declare class NES {
     constructor(arg:NESInit):void;
-    public loadROM(romData:any):void;
+    loadROM(romData:any):void;
+    frame():void;
+    buttonDown():void;
+    buttonUp():void;
   }
 }
