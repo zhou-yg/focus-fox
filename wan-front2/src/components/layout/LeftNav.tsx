@@ -48,7 +48,7 @@ const leftNavConfig: Array<LeftNavItem> = [
         type: 'child-header',
         name,
         index,
-        href: `/wan/category?type=${index}`,
+        href: `/wan/category/${index + 1}`,
         children: [],
       };
       return r;

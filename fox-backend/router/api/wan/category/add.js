@@ -112,6 +112,7 @@ module.exports = {
       let r3 = await ctx.models.category.insertIfNotExists({
         downlink,
       }, {
+        type,
         name, downlink,category, url, img,
         fileResource,
         imgResource,

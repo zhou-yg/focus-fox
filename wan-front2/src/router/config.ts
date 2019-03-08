@@ -22,7 +22,7 @@ const routerConfig:RouterConfig = {
       component: Repo,
     },
     {
-      href: '/wan/category',
+      href: '/wan/category/:type',
       component: Category,
     },
   ],

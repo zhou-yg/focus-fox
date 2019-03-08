@@ -17,6 +17,12 @@ export interface WanCategoryAdd {
   downBase: string;
   onPushing: WanCategoryAddPushingState;
 }
+
+export interface WanCategoryPushed extends WanCategoryAdd {
+  fileResource: string;
+  imgResource: string;
+}
+
 interface WanCategoryQuery {
   name:string;
   downlink:string;
@@ -29,6 +35,10 @@ interface WanCategoryPage {
 export interface WanCategoryPageRes {
   all: number;
   data: Array<WanCategoryAdd>;
+}
+export interface WanPushedCategoryPageRes {
+  all: number;
+  data: Array<WanCategoryPushed>;
 }
 
 interface ApiNormal<T, U> {
@@ -49,7 +59,7 @@ interface ApiLayer1 {
         add: ApiNormal<WanCategoryAdd, string>;
         hidden: ApiNormal<WanCategoryQuery, string>;
         remove: ApiNormal<WanCategoryQuery, string>;
-        list: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
+        list: ApiNormal<WanCategoryPage, WanPushedCategoryPageRes>;
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
       },
     },
@@ -58,6 +68,8 @@ interface ApiLayer1 {
     }
   };
 }
+
+export const STATIC_HOST = `http://static.nomiwan.com:10800/public/`;
 
 function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
   path = path.replace(/^\//, '');
