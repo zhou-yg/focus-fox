@@ -30,7 +30,7 @@ function TopBar() {
           <LeftNav />
         </div>
         <div className="right-content">
-          {routerConfig.leftNav.map(l => {
+          {routerConfig.leftNav.concat(routerConfig.game).map(l => {
             return (
               <Route key={l.href} path={l.href} component={l.component} />
             );
