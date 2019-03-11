@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import { Observer } from "mobx-react-lite";
-import Pagination from 'src/components/basic/Pagination';
 import SearchBar from 'src/components/basic/SearchBar';
 import {useAllState} from 'src/mobx/';
 import {WanCategoryAdd} from 'src/tools/http';
