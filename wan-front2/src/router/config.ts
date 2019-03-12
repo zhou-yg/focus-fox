@@ -29,7 +29,7 @@ const routerConfig:RouterConfig = {
     },
   ],
   game: {
-    href: '/wan/game',
+    href: '/wan/game/:_id',
     component: Game,
   },
 };

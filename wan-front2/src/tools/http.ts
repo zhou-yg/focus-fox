@@ -8,6 +8,7 @@ export type WanCategoryAddPushingState = 0 | 1 | 2 | 3;
 
 export interface WanCategoryAdd {
   type: 'nes' | 'gba',
+  "_id": string,
   "id": string,
   "name": string,
   "downlink": string,
@@ -26,6 +27,9 @@ export interface WanCategoryPushed extends WanCategoryAdd {
 interface WanCategoryQuery {
   name:string;
   downlink:string;
+}
+interface WanCategoryIdQuery {
+  _id: string;
 }
 interface WanCategoryPage {
   type:CategoryType;
@@ -61,6 +65,7 @@ interface ApiLayer1 {
         remove: ApiNormal<WanCategoryQuery, string>;
         list: ApiNormal<WanCategoryPage, WanPushedCategoryPageRes>;
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
+        listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
       },
     },
     user: {

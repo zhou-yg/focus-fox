@@ -1,9 +1,8 @@
 import React, {useEffect} from "react";
 import { Observer } from "mobx-react-lite";
-import Pagination from 'src/components/basic/Pagination';
 import SearchBar2 from 'src/components/basic/SearchBar2';
 import {useAllState} from 'src/mobx/';
-import {WanCategoryAdd} from 'src/tools/http';
+import { Link } from "react-router-dom";
 
 function Repo() {
 
@@ -15,7 +14,7 @@ function Repo() {
     console.log('effect');
   });
 
-  return (<div className="main-repo">
+  return (<div className="main-category main-repo">
     <Observer render={() => {
       return (
         <SearchBar2
@@ -29,13 +28,15 @@ function Repo() {
           let canPushed = /\.nes/.test(item.downBase);
           return (
             <li className="repo-li" key={`${item.name}-${index}`}>
-              <div className="img-box">
-                <img src={item.imgResource} />
-              </div>
-              <div className="row">
-                <span className="pre">名字：</span>
-                <span className="value">{item.name}</span>
-              </div>
+              <Link to={`/wan/game/${item._id}`}>
+                <div className="img-box">
+                  <img src={item.imgResource} />
+                </div>
+                <div className="row">
+                  <span className="pre">名字：</span>
+                  <span className="value">{item.name}</span>
+                </div>
+              </Link>
             </li>
           );
         })}

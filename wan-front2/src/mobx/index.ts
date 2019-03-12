@@ -22,6 +22,7 @@ interface AllActions {
   getList: (page: number, type:CategoryType) => void;
   getOnlineList: (page: number, type:CategoryType) => void;
   pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
+  listItemById: (_id: string) => void;
 }
 
 type StateKey = 'repoList' | 'onlineList';
@@ -87,6 +88,11 @@ const actions:AllActions = {
     await http.api.wan.category.add.post(item);
 
     return Promise.resolve(3 as WanCategoryAddPushingState);
+  },
+
+  listItemById: async (_id: string) => {
+    let r = await  http.api.wan.category.listItemById.get({_id});
+    allState.onlineList.data = [r];
   },
 }
 
