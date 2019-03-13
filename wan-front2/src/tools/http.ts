@@ -2,81 +2,9 @@ import axios from 'axios'
 // 同步backend api 下
 import apiServerJson from './server-api.json'
 
-export type CategoryType = 1 | 2 | 3 | 4 | 5 | 6 |7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
-
-export type WanCategoryAddPushingState = 0 | 1 | 2 | 3;
-
-export interface WanCategoryAdd {
-  type: 'nes' | 'gba',
-  "_id": string,
-  "id": string,
-  "name": string,
-  "downlink": string,
-  "category": CategoryType;
-  "url": string,
-  "img": string;
-  downBase: string;
-  onPushing: WanCategoryAddPushingState;
-}
-
-export interface WanCategoryPushed extends WanCategoryAdd {
-  fileResource: string;
-  imgResource: string;
-}
-
-interface WanCategoryQuery {
-  name:string;
-  downlink:string;
-}
-interface WanCategoryIdQuery {
-  _id: string;
-}
-interface WanCategoryPage {
-  type:CategoryType;
-  page:number;
-  pageSize ?:number;
-}
-export interface WanCategoryPageRes {
-  all: number;
-  data: Array<WanCategoryAdd>;
-}
-export interface WanPushedCategoryPageRes {
-  all: number;
-  data: Array<WanCategoryPushed>;
-}
-
-interface ApiNormal<T, U> {
-    get: (arg:T, config?:any) => Promise<U>;
-    post: (arg:T, config?:any) => Promise<U>;
-}
-
-interface UserProfile {
-  id: string;
-  name: string;
-  avatar: string;
-}
-
-interface ApiLayer1 {
-  api: {
-    wan: {
-      category: {
-        add: ApiNormal<WanCategoryAdd, string>;
-        hidden: ApiNormal<WanCategoryQuery, string>;
-        remove: ApiNormal<WanCategoryQuery, string>;
-        list: ApiNormal<WanCategoryPage, WanPushedCategoryPageRes>;
-        listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
-        listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
-      },
-    },
-    user: {
-      profile: ApiNormal<any, UserProfile>;
-    }
-  };
-}
-
 export const STATIC_HOST = `http://static.nomiwan.com:10800/public/`;
 
-function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
+async function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
   path = path.replace(/^\//, '');
 
   let k = method === 'GET' ? 'params' : 'data';

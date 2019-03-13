@@ -1,3 +1,4 @@
+/// <reference path="./App.d.ts" />
 import React, { Component } from 'react';
 import './assets/styles/App.css';
 import AppRouter from './router/Index';

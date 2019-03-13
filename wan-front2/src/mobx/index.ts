@@ -1,31 +1,6 @@
 import { useObservable } from "mobx-react-lite";
 
-import http, {STATIC_HOST, WanCategoryPageRes, WanPushedCategoryPageRes, CategoryType, WanCategoryAdd, WanCategoryAddPushingState} from 'src/tools/http';
-
-interface WanCategoryPageRes2 extends WanCategoryPageRes {
-    page: number;
-    init: boolean;
-    selectType: CategoryType;
-}
-
-export interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
-    page: number;
-    init: boolean;
-    selectType: CategoryType;
-}
-
-interface AllState {
-  repoList:WanCategoryPageRes2;
-  onlineList: WanPushedCategoryPageRes3;
-}
-interface AllActions {
-  getList: (page: number, type:CategoryType) => void;
-  getOnlineList: (page: number, type:CategoryType) => void;
-  pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
-  listItemById: (_id: string) => void;
-}
-
-type StateKey = 'repoList' | 'onlineList';
+import http, {STATIC_HOST} from 'src/tools/http';
 
 const initStateMap = {
   repoList: ():WanCategoryPageRes2 => ({

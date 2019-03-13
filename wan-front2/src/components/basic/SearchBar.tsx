@@ -1,5 +1,4 @@
 import React, {useRef} from "react";
-import {CategoryType} from 'src/tools/http';
 import Pagination from './Pagination';
 
 interface CategoryTypeOption {

@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import { Observer } from "mobx-react-lite";
 import {nes_load_url, nes_load_data} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
-import {WanCategoryPushed} from 'src/tools/http';
 
 interface GameProps {
   match: {
