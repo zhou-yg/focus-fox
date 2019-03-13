@@ -3,12 +3,12 @@
   .main-game-header {
     display: flex;
     padding-bottom: 10px;
-    border-bottom: 1px solid #fff;
 
     .img-box {
       width: 250px;
       height: 170px;
       overflow: hidden;
+      display: none;
       > img {
         width: 100%;
       }
@@ -27,6 +27,35 @@
       }
       .pre {
         color: #999;
+      }
+    }
+  }
+
+
+
+  .main-game-history {
+    border: 1px solid #fff;
+    height: 200px;
+    overflow: auto;
+
+    > ul {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      > .history-row {
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px solid #fff;
+        display: flex;
+        width: 20%;
+        float: left;
+        margin-top: -1px;
+        margin-left: -1px;
+        font-size: 12px;
+        .s,.n,.t {
+          margin-right: 1em;
+        }
+
       }
     }
   }

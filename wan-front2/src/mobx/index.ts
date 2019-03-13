@@ -47,11 +47,17 @@ const initStateMap = {
     data: [], all: 0, page: 1, init: false,
     selectType: 1,
   }),
+  gameHistory: ():GameHistoryState => ({
+    id: '',
+    list: [],
+    init: false,
+  }),
 };
 
 const allState:AllState = {
   repoList: initStateMap.repoList(),
   onlineList: initStateMap.onlineList(),
+  gameHistory: initStateMap.gameHistory(),
 };
 
 const actions:AllActions = {
@@ -102,12 +108,19 @@ const actions:AllActions = {
 
     allState.onlineList.data = [transOnlineItem(r)];
   },
+  getGameHistoryById: async (_id: string) => {
+    let r = await  http.api.wan.category.getGameHistoryById.get({_id});
+    allState.gameHistory.list = r;
+    allState.gameHistory.id = _id;
+
+    console.log(allState.gameHistory)
+  },
 }
 
 // window.test = state;
 
 export function useAllState (keys: Array<StateKey>): [AllState, AllActions] {
-  keys.forEach(k => {
+  keys.forEach((k) => {
     if (!allState[k].init) {
       allState[k] = useObservable(initStateMap[k]());
       allState[k].init = true;

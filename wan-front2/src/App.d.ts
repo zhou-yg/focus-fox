@@ -55,6 +55,13 @@ interface UserProfile {
   avatar: string;
 }
 
+interface GameHistoryItem {
+    _id: string;
+    time: number;
+    type: 0 | 1; // 0主动，1自动
+    saveData: void;
+}
+
 interface ApiLayer1 {
   api: {
     wan: {
@@ -65,6 +72,7 @@ interface ApiLayer1 {
         list: ApiNormal<WanCategoryPage, WanPushedCategoryPageRes>;
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
         listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
+        getGameHistoryById: ApiNormal<WanCategoryIdQuery, Array<GameHistoryItem>>;
       },
     },
     user: {
@@ -85,16 +93,22 @@ interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
     init: boolean;
     selectType: CategoryType;
 }
-
+interface GameHistoryState {
+  id: string;
+  list: Array<GameHistoryItem>;
+  init: boolean;
+}
 interface AllState {
   repoList:WanCategoryPageRes2;
   onlineList: WanPushedCategoryPageRes3;
+  gameHistory: GameHistoryState;
 }
 interface AllActions {
   getList: (page: number, type:CategoryType) => void;
   getOnlineList: (page: number, type:CategoryType) => void;
   pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
   listItemById: (_id: string) => void;
+  getGameHistoryById: (_id:string) => void;
 }
 
-type StateKey = 'repoList' | 'onlineList';
+type StateKey = 'repoList' | 'onlineList' | 'gameHistory';
