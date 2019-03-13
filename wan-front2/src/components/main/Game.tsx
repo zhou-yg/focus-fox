@@ -10,14 +10,36 @@ interface GameProps {
     };
   };
 }
-
 interface GamePanelProps {
     data: WanCategoryPushed;
 }
 
-function GamePanel(props: GamePanelProps) {
+function GameHeader(props: GamePanelProps) {
   console.log(props.data);
-  return (<div>{JSON.stringify(props.data)}</div>)
+  const {imgResource, name, categoryName}:WanCategoryPushed = props.data;
+
+  let startGame = () => {};
+
+  return (
+    <div className="main-game-header">
+      <div className="img-box">
+        <img width="100%" src={imgResource} />
+      </div>
+      <ul className="intro">
+        <li className="row">
+          <span className="pre">名字：</span>
+          {name}
+        </li>
+        <li className="row">
+          <span className="pre">类型：</span>
+          {categoryName}
+        </li>
+        <li className="row">
+          <button onClick={startGame}>开始游戏</button>
+        </li>
+      </ul>
+    </div>
+  );
 }
 
 function Game(props:GameProps) {
@@ -34,9 +56,7 @@ function Game(props:GameProps) {
     <Observer render={() => {
       const current = onlineList.data.filter(obj => obj._id === props.match.params._id)[0];
 
-      return (
-        <GamePanel data={current} />
-      );
+      return current ? (<GameHeader data={current} />) : <span>loading...</span>;
     }} />
   </div>);
 }

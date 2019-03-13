@@ -2,6 +2,42 @@ import { useObservable } from "mobx-react-lite";
 
 import http, {STATIC_HOST} from 'src/tools/http';
 
+
+function transOnlineItem (obj:WanCategoryPushed): WanCategoryPushed {
+
+  let m = [
+    '其它',
+    '动作',
+    '角色扮演',
+    '射击',
+    '运动',
+    '益智',
+    '策略',
+    '冒险',
+    '竞速',
+    '棋牌',
+    '桌面',
+    '战略模拟',
+    '合集',
+    '格斗',
+  ];
+
+
+  let downBase = obj.downlink.match(/[\w]+?\.[\w]+?$/);
+  obj.downBase = downBase ? downBase[0] : '';
+  let len = obj.downBase.length;
+  if (len > 10) {
+    obj.downBase = obj.downBase.substr(len - 10, len);
+  }
+
+  obj.imgResource = STATIC_HOST + obj.imgResource;
+  obj.fileResource = STATIC_HOST + obj.fileResource;
+
+  obj.categoryName = m[obj.category];
+
+  return obj;
+}
+
 const initStateMap = {
   repoList: ():WanCategoryPageRes2 => ({
     data: [], all: 0, page: 1, init: false,
@@ -50,11 +86,7 @@ const actions:AllActions = {
       pageSize: 10,
     }).then(({all, data}) => {
       allState.onlineList.all = all;
-      allState.onlineList.data = data.map(obj => {
-        obj.imgResource = STATIC_HOST + obj.imgResource;
-        obj.fileResource = STATIC_HOST + obj.fileResource;
-        return obj;
-      });
+      allState.onlineList.data = data.map(transOnlineItem);
     });
   },
 
@@ -67,7 +99,8 @@ const actions:AllActions = {
 
   listItemById: async (_id: string) => {
     let r = await  http.api.wan.category.listItemById.get({_id});
-    allState.onlineList.data = [r];
+
+    allState.onlineList.data = [transOnlineItem(r)];
   },
 }
 
