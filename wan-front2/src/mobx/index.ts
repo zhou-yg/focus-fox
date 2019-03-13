@@ -1,4 +1,4 @@
-import { useObservable } from "mobx-react-lite";
+import { useObservable, observer} from "mobx-react-lite";
 
 import http, {STATIC_HOST} from 'src/tools/http';
 
@@ -39,22 +39,21 @@ function transOnlineItem (obj:WanCategoryPushed): WanCategoryPushed {
 }
 
 const initStateMap = {
-  repoList: ():WanCategoryPageRes2 => ({
-    data: [], all: 0, page: 1, init: false,
+  repoList: () => (observer({
+    data: [], all: 0, page: 1,
     selectType: 1,
-  }),
-  onlineList: ():WanPushedCategoryPageRes3 => ({
-    data: [], all: 0, page: 1, init: false,
+  })),
+  onlineList: () => (observer({
+    data: [], all: 0, page: 1,
     selectType: 1,
-  }),
-  gameHistory: ():GameHistoryState => ({
+  })),
+  gameHistory: () => (observer({
     id: '',
     list: [],
-    init: false,
-  }),
+  })),
 };
 
-const allState:AllState = {
+const allState = {
   repoList: initStateMap.repoList(),
   onlineList: initStateMap.onlineList(),
   gameHistory: initStateMap.gameHistory(),
@@ -112,20 +111,18 @@ const actions:AllActions = {
     let r = await  http.api.wan.category.getGameHistoryById.get({_id});
     allState.gameHistory.list = r;
     allState.gameHistory.id = _id;
-
-    console.log(allState.gameHistory)
   },
 }
 
 // window.test = state;
 
-export function useAllState (keys: Array<StateKey>): [AllState, AllActions] {
-  keys.forEach((k) => {
-    if (!allState[k].init) {
-      allState[k] = useObservable(initStateMap[k]());
-      allState[k].init = true;
-    }
-  });
+export function useAllState (keys: Array<StateKey>): [any, AllActions] {
+  // keys.forEach((k) => {
+  //   if (!allState[k].init) {
+  //     allState[k] = useObservable(initStateMap[k]());
+  //     allState[k].init = true;
+  //   }
+  // });
 
   return [
     allState,

@@ -84,25 +84,22 @@ interface ApiLayer1 {
 // mobx
 interface WanCategoryPageRes2 extends WanCategoryPageRes {
     page: number;
-    init: boolean;
     selectType: CategoryType;
 }
 
 interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
     page: number;
-    init: boolean;
     selectType: CategoryType;
 }
 interface GameHistoryState {
   id: string;
   list: Array<GameHistoryItem>;
-  init: boolean;
 }
-interface AllState {
-  repoList:WanCategoryPageRes2;
-  onlineList: WanPushedCategoryPageRes3;
-  gameHistory: GameHistoryState;
-}
+// interface AllState {
+//   repoList:WanCategoryPageRes2;
+//   onlineList: WanPushedCategoryPageRes3;
+//   gameHistory: GameHistoryState;
+// }
 interface AllActions {
   getList: (page: number, type:CategoryType) => void;
   getOnlineList: (page: number, type:CategoryType) => void;

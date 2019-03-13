@@ -1,8 +1,10 @@
+import { useObservable } from "mobx-react-lite";
 import moment from 'moment';
 import React, {useEffect, useState} from "react";
 import { Observer } from "mobx-react-lite";
 import {nes_load_url, nes_load_data} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
+import { observable } from "mobx";
 
 interface GameProps {
   match: {
@@ -20,9 +22,8 @@ interface GameHistoryProps {
   list: Array<GameHistoryItem>;
   onSelect: (id:string) => void;
 }
-function GameHistory(props: GameHistoryProps) {
 
-  console.log(props.list);
+function GameHistory(props: GameHistoryProps) {
 
   return (
     <div className="main-game-history">
@@ -58,7 +59,6 @@ function GameHistory(props: GameHistoryProps) {
 function GameHeader(props: GameHeaderProps) {
   console.log(props.data);
   const {imgResource, name, categoryName}:WanCategoryPushed = props.data;
-
   let startGame = () => {
     props.onGameStart();
   };
