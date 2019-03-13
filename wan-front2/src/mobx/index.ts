@@ -8,7 +8,7 @@ interface WanCategoryPageRes2 extends WanCategoryPageRes {
     selectType: CategoryType;
 }
 
-interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
+export interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
     page: number;
     init: boolean;
     selectType: CategoryType;
@@ -101,7 +101,7 @@ const actions:AllActions = {
 export function useAllState (keys: Array<StateKey>): [AllState, AllActions] {
   keys.forEach(k => {
     if (!allState[k].init) {
-      allState[k] = useObservable<WanCategoryPageRes2>(initStateMap[k]());
+      allState[k] = useObservable(initStateMap[k]());
       allState[k].init = true;
     }
   });
