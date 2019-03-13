@@ -14,5 +14,10 @@ module.exports = async function (ctx, next) {
       type: 1,
       time: Date.now(),
     },
+    {
+      _id: '3',
+      type: 0,
+      time: Date.now(),
+    },
   ];
 }

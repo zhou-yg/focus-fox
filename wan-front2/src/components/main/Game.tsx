@@ -37,7 +37,7 @@ function GameHistory(props: GameHistoryProps) {
         {props.list.map(obj => {
           let k = `${obj.type}${obj.time}`;
           let tText = obj.type === 0 ? '自动存档' : '主动存档';
-          let dText = moment(obj.time).format('YYYY-MM-DD HH:mm:ss');
+          let dText = moment(obj.time).format('YY/MM/DD HH:mm:ss');
           return (
             <li key={k} className="history-row" >
               <div className="s">

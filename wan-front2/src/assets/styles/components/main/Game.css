@@ -45,12 +45,16 @@
       > .history-row {
         box-sizing: border-box;
         padding: 5px;
-        border: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
         display: flex;
-        width: 20%;
+        min-width: 30%;
+        max-width: 33.5%;
+        flex:1;
         float: left;
-        margin-top: -1px;
-        margin-left: -1px;
+        /* margin-top: -1px;
+        margin-left: -1px; */
+        margin-right: -1px;
         font-size: 12px;
         .s,.n,.t {
           margin-right: 1em;
