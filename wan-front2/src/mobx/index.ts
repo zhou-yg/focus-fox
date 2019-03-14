@@ -1,5 +1,5 @@
-import { useObservable, observer} from "mobx-react-lite";
-
+import { useObservable} from "mobx-react-lite";
+import { observable } from "mobx"
 import http, {STATIC_HOST} from 'src/tools/http';
 
 
@@ -39,21 +39,21 @@ function transOnlineItem (obj:WanCategoryPushed): WanCategoryPushed {
 }
 
 const initStateMap = {
-  repoList: () => (observer({
+  repoList: () => (observable<WanCategoryPageRes2>({
     data: [], all: 0, page: 1,
     selectType: 1,
   })),
-  onlineList: () => (observer({
+  onlineList: () => (observable<WanPushedCategoryPageRes3>({
     data: [], all: 0, page: 1,
     selectType: 1,
   })),
-  gameHistory: () => (observer({
+  gameHistory: () => (observable<GameHistoryState>({
     id: '',
     list: [],
   })),
 };
 
-const allState = {
+const allState:AllState = {
   repoList: initStateMap.repoList(),
   onlineList: initStateMap.onlineList(),
   gameHistory: initStateMap.gameHistory(),
@@ -117,15 +117,13 @@ const actions:AllActions = {
 // window.test = state;
 
 export function useAllState (keys: Array<StateKey>): [any, AllActions] {
-  // keys.forEach((k) => {
-  //   if (!allState[k].init) {
-  //     allState[k] = useObservable(initStateMap[k]());
-  //     allState[k].init = true;
-  //   }
-  // });
+  let currentState:AllState = {};
+  keys.forEach((k) => {
+    currentState[k] = useObservable(initStateMap[k]());
+  });
 
   return [
-    allState,
+    currentState,
     actions
   ];
 };

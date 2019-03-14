@@ -95,11 +95,11 @@ interface GameHistoryState {
   id: string;
   list: Array<GameHistoryItem>;
 }
-// interface AllState {
-//   repoList:WanCategoryPageRes2;
-//   onlineList: WanPushedCategoryPageRes3;
-//   gameHistory: GameHistoryState;
-// }
+interface AllState {
+  repoList:WanCategoryPageRes2;
+  onlineList: WanPushedCategoryPageRes3;
+  gameHistory: GameHistoryState;
+}
 interface AllActions {
   getList: (page: number, type:CategoryType) => void;
   getOnlineList: (page: number, type:CategoryType) => void;
