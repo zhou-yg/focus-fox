@@ -8,7 +8,6 @@
       width: 250px;
       height: 170px;
       overflow: hidden;
-      display: none;
       > img {
         width: 100%;
       }
@@ -16,14 +15,11 @@
     .intro {
       margin-left: 15px;
       flex: 1;
-      /* overflow: hidden; */
       .row {
         color: #fff;
-        /* border-bottom: 1px solid #666; */
         padding-bottom: 5px;
         line-height: 1.5em;
         height: 1.5em;
-        /* float: left; */
       }
       .pre {
         color: #999;
