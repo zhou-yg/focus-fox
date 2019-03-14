@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Repo() {
 
   // const onlineList = useObservable<WanCategoryPageRes2>({ data: [], all: 0, page: 1 });
-  const [{onlineList}, {getOnlineList}] = useAllState(['onlineList']);
+  const [{onlineList}, {getOnlineList}] = useAllState();
 
   useEffect(() => {
     getOnlineList(onlineList.page, onlineList.selectType);

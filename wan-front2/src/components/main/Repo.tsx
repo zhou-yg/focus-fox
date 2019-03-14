@@ -6,7 +6,7 @@ import {useAllState} from 'src/mobx/';
 function Repo() {
 
   // const repoList = useObservable<WanCategoryPageRes2>({ data: [], all: 0, page: 1 });
-  const [{repoList}, {getList, pushNes}] = useAllState(['repoList']);
+  const [{repoList}, {getList, pushNes}] = useAllState();
 
   useEffect(() => {
     getList(repoList.page, repoList.selectType);

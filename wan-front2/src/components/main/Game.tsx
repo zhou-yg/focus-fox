@@ -86,7 +86,7 @@ function GameHeader(props: GameHeaderProps) {
 }
 
 function Game(props:GameProps) {
-  const [{onlineList, gameHistory}, {listItemById, getGameHistoryById}] = useAllState(['onlineList', 'gameHistory']);
+  const [{onlineList, gameHistory}, {listItemById, getGameHistoryById}] = useAllState();
   const [selectedDiskId, setDisk] = useState('');
   const curId = props.match.params._id;
 

@@ -116,19 +116,15 @@ const actions:AllActions = {
 
 // window.test = state;
 
-export function useAllState (keys: Array<StateKey>): [AllState, AllActions] {
-  let currentState:AllState = {
-    repoList: initStateMap.repoList(),
-    onlineList: initStateMap.onlineList(),
-    gameHistory: initStateMap.gameHistory(),
-  };
-  Object.keys(allState).forEach((k, i) => {
+export function useAllState (): [AllState, AllActions] {
+  let currentState: { [key:string]:any } = {};
+  Object.keys(allState).forEach((k) => {
 
-    currentState[k as StateKey] = useObservable(allState[k as StateKey]);
+    currentState[k] = useObservable(allState[k as StateKey]);
   });
 
   return [
-    currentState,
+    currentState as AllState,
     actions
   ];
 };

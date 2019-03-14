@@ -96,6 +96,7 @@ interface GameHistoryState {
   list: Array<GameHistoryItem>;
 }
 interface AllState {
+  [key in StateKey]
   repoList:WanCategoryPageRes2;
   onlineList: WanPushedCategoryPageRes3;
   gameHistory: GameHistoryState;
