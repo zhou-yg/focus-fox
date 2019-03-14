@@ -43,7 +43,7 @@ function GameHistory(props: GameHistoryProps) {
             <li key={k} className="history-row" >
               <div className="s">
                 <input type="checkbox"
-                  onChange={() => props.onSelect(obj._id)}
+                  onChange={() => props.onSelect(props.selectedId ? '' : obj._id)}
                   checked={props.selectedId === obj._id} />
               </div>
               <div className="t">{tText}</div>
