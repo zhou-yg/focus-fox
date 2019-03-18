@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from "react";
 import moment from 'moment';
 
-interface GameHistoryProps {
+interface NesHistoryProps {
   selectedId: string;
-  list: Array<GameHistoryItem>;
+  list: Array<NesHistoryItem>;
   onSelect: (id:string) => void;
 }
 
-function GameHistory(props: GameHistoryProps) {
+function NesHistory(props: NesHistoryProps) {
 
   return (
-    <div className="main-game-history">
+    <div className="main-nes-history">
       <ul>
         <li className="history-row">
           <div className="s">
@@ -40,4 +40,4 @@ function GameHistory(props: GameHistoryProps) {
   );
 }
 
-export default GameHistory;
+export default NesHistory;

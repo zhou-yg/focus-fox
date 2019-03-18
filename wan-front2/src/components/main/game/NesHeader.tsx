@@ -1,21 +1,21 @@
 import React, {useEffect, useState} from "react";
 
 
-interface GameHeaderProps {
+interface NesHeaderProps {
     data: WanCategoryPushed;
-    onGameStart: () => void;
+    onNesStart: () => void;
 }
 
 
-function GameHeader(props: GameHeaderProps) {
+function NesHeader(props: NesHeaderProps) {
   console.log(props.data);
   const {imgResource, name, categoryName}:WanCategoryPushed = props.data;
-  let startGame = () => {
-    props.onGameStart();
+  let startNes = () => {
+    props.onNesStart();
   };
 
   return (
-    <div className="main-game-header">
+    <div className="main-nes-header">
       <div className="img-box">
         {/*
           <img width="100%" src={imgResource} />
@@ -31,11 +31,11 @@ function GameHeader(props: GameHeaderProps) {
           {categoryName}
         </li>
         <li className="row">
-          <button onClick={startGame}>开始游戏</button>
+          <button onClick={startNes}>开始游戏</button>
         </li>
       </ul>
     </div>
   );
 }
 
-export default GameHeader;
+export default NesHeader;

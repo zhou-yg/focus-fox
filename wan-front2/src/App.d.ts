@@ -55,7 +55,7 @@ interface UserProfile {
   avatar: string;
 }
 
-interface GameHistoryItem {
+interface NesHistoryItem {
     _id: string;
     time: number;
     type: 0 | 1; // 0主动，1自动
@@ -72,7 +72,7 @@ interface ApiLayer1 {
         list: ApiNormal<WanCategoryPage, WanPushedCategoryPageRes>;
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
         listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
-        getGameHistoryById: ApiNormal<WanCategoryIdQuery, Array<GameHistoryItem>>;
+        getNesHistoryById: ApiNormal<WanCategoryIdQuery, Array<NesHistoryItem>>;
       },
     },
     user: {
@@ -93,7 +93,7 @@ interface WanPushedCategoryPageRes3 extends WanPushedCategoryPageRes {
 }
 interface GameHistoryState {
   id: string;
-  list: Array<GameHistoryItem>;
+  list: Array<NesHistoryItem>;
 }
 interface AllState {
   [key in StateKey]
@@ -106,7 +106,7 @@ interface AllActions {
   getOnlineList: (page: number, type:CategoryType) => void;
   pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
   listItemById: (_id: string) => void;
-  getGameHistoryById: (_id:string) => void;
+  getNesHistoryById: (_id:string) => void;
 }
 
 type StateKey = 'repoList' | 'onlineList' | 'gameHistory';

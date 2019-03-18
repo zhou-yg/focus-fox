@@ -1,7 +1,7 @@
 import Index from '../components/main/Index';
 import Category from '../components/main/Category';
 import Repo from '../components/main/Repo';
-import Game from '../components/main/Game';
+import Game from '../components/main/Nes';
 
 interface RouteConfigItem {
   href: string;

@@ -107,8 +107,8 @@ const actions:AllActions = {
 
     allState.onlineList.data = [transOnlineItem(r)];
   },
-  getGameHistoryById: async (_id: string) => {
-    let r = await  http.api.wan.category.getGameHistoryById.get({_id});
+  getNesHistoryById: async (_id: string) => {
+    let r = await  http.api.wan.category.getNesHistoryById.get({_id});
     allState.gameHistory.list = r;
     allState.gameHistory.id = _id;
   },

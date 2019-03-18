@@ -2,18 +2,18 @@ import React, {useEffect, useState} from "react";
 import { Observer } from "mobx-react-lite";
 import {nes_load_url, nes_load_data} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
-import GameHeader from './game/GameHeader';
-import GameHistory from './game/GameHistory';
+import NesHeader from './game/NesHeader';
+import NesHistory from './game/NesHistory';
 
-interface GameProps {
+interface NesProps {
   match: {
     params: {
       _id: string;
     };
   };
 }
-function Game(props:GameProps) {
-  const [{onlineList, gameHistory}, {listItemById, getGameHistoryById}] = useAllState();
+function Nes(props:NesProps) {
+  const [{onlineList, gameHistory}, {listItemById, getNesHistoryById}] = useAllState();
   const [selectedDiskId, setDisk] = useState('');
   const curId = props.match.params._id;
 
@@ -22,11 +22,11 @@ function Game(props:GameProps) {
       listItemById(curId);
     }
     if (gameHistory.id !== curId) {
-      getGameHistoryById(curId);
+      getNesHistoryById(curId);
     }
   }, [curId]);
 
-  let startGame = () => {
+  let startNes = () => {
     console.log(`selectedDiskId:${selectedDiskId}`);
   };
   let selectHistoryItem = (id:string) => {
@@ -34,15 +34,15 @@ function Game(props:GameProps) {
     setDisk(id);
   };
 
-  return (<div className="main-game">
+  return (<div className="main-nes">
     <Observer render={() => {
       const current = onlineList.data.filter(obj => obj._id === props.match.params._id)[0];
 
-      return current ? (<GameHeader data={current} onGameStart={startGame} />) : <span>loading...</span>;
+      return current ? (<NesHeader data={current} onNesStart={startNes} />) : <span>loading...</span>;
     }} />
 
     <Observer render={() => {
-      return <GameHistory
+      return <NesHistory
         selectedId={selectedDiskId}
         list={gameHistory.list}
         onSelect={selectHistoryItem}
@@ -52,4 +52,4 @@ function Game(props:GameProps) {
   </div>);
 }
 
-export default Game;
+export default Nes;
