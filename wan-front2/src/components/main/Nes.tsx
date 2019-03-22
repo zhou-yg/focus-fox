@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import { Observer } from "mobx-react-lite";
 import {nes_load_url, nes_load_data} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
-import NesHeader from './game/NesHeader';
-import NesHistory from './game/NesHistory';
+import NesHeader from './nes/NesHeader';
+import NesHistory from './nes/NesHistory';
 
 interface NesProps {
   match: {
