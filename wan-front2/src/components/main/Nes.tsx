@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { Observer } from "mobx-react-lite";
-import {nes_load_url, nes_load_data} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
 import NesHeader from './nes/NesHeader';
-import NesHistory from './nes/NesHistory';
+import NesCenter from './nes/NesCenter';
 
 interface NesProps {
   match: {
@@ -13,40 +12,38 @@ interface NesProps {
   };
 }
 function Nes(props:NesProps) {
-  const [{onlineList, gameHistory}, {listItemById, getNesHistoryById}] = useAllState();
-  const [selectedDiskId, setDisk] = useState('');
+  const [{onlineList}, {listItemById}] = useAllState();
+  const [isShowNesCenter, setNesCenter] = useState(true);
   const curId = props.match.params._id;
 
   useEffect(() => {
     if (onlineList.data.length === 0) {
       listItemById(curId);
     }
-    if (gameHistory.id !== curId) {
-      getNesHistoryById(curId);
-    }
   }, [curId]);
 
   let startNes = () => {
-    console.log(`selectedDiskId:${selectedDiskId}`);
-  };
-  let selectHistoryItem = (id:string) => {
-    console.log(`selectHistoryItem id:`, id)
-    setDisk(id);
+    setNesCenter(true);
   };
 
   return (<div className="main-nes">
-    <Observer render={() => {
-      const current = onlineList.data.filter(obj => obj._id === props.match.params._id)[0];
+      {
+        isShowNesCenter ? '' : (
+          <div className="main-nes-header-top">
+            <Observer render={() => {
+                    const current = onlineList.data.filter(obj => obj._id === props.match.params._id)[0];
 
-      return current ? (<NesHeader data={current} onNesStart={startNes} />) : <span>loading...</span>;
-    }} />
+                    return current ? (<NesHeader data={current} onNesStart={startNes} />) : <span></span>;
+                  }} />
+          </div>
+        )
+      }
+
 
     <Observer render={() => {
-      return <NesHistory
-        selectedId={selectedDiskId}
-        list={gameHistory.list}
-        onSelect={selectHistoryItem}
-      />
+      return (isShowNesCenter ? (<NesCenter
+        nesId={curId}
+        />) : <span>wait starting</span>);
     }} />
 
   </div>);

@@ -1,5 +1,8 @@
 .main-nes {
   padding: 20px;
+  .main-nes-header-top {
+    height: 180px;
+  }
   .main-nes-header {
     display: flex;
     padding-bottom: 10px;
@@ -44,18 +47,37 @@
         border-right: 1px solid #fff;
         border-bottom: 1px solid #fff;
         display: flex;
-        min-width: 30%;
-        max-width: 33.5%;
+        min-width: 50%;
+        max-width: 50%;
         flex:1;
-        float: left;
+        /* float: left; */
         /* margin-top: -1px;
         margin-left: -1px; */
-        margin-right: -1px;
+        /* margin-right: -1px; */
         font-size: 12px;
         .s,.n,.t {
           margin-right: 1em;
         }
 
+      }
+    }
+  }
+
+  .main-nes-center {
+    .main-nes-history-top {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%, -50%);
+
+      .main-nes-history-top-header {
+        border: 1px solid #fff;
+        border-bottom: 0;
+        padding: 10px;
+        > button {
+          float: right;
+        }
       }
     }
   }

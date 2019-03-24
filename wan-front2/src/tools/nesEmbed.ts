@@ -15,7 +15,8 @@ let SAMPLE_COUNT = 4*1024;
 let SAMPLE_MASK = SAMPLE_COUNT - 1;
 let audio_samples_L = new Float32Array(SAMPLE_COUNT);
 let audio_samples_R = new Float32Array(SAMPLE_COUNT);
-let audio_write_cursor = 0, audio_read_cursor = 0;
+let audio_write_cursor = 0;
+let audio_read_cursor = 0;
 
 let nes = new jsnes.NES({
 	onFrame: function(framebuffer_24:any){
@@ -108,13 +109,12 @@ function nes_boot(rom_data: any){
 	window.requestAnimationFrame(onAnimationFrame);
 }
 
-export function nes_load_data(canvas_id:string, rom_data:string){
+export function nesLoadData(canvas_id:string, rom_data:string){
 	nes_init(canvas_id);
 	nes_boot(rom_data);
 }
 
-export function nes_load_url(canvas_id: string, path: string){
-	nes_init(canvas_id);
+export function nesLoadUrl(canvas_id: string, path: string){
 
 	let req = new XMLHttpRequest();
 	req.open("GET", path);
@@ -126,7 +126,10 @@ export function nes_load_url(canvas_id: string, path: string){
 
 	req.onload = function() {
 		if (this.status === 200) {
-		nes_boot(this.responseText);
+      nes_init(canvas_id);
+      setTimeout(() => {
+        nes_boot(this.responseText);
+      });
 		} else if (this.status === 0) {
 			// Aborted, so ignore error
 		} else {
@@ -135,6 +138,10 @@ export function nes_load_url(canvas_id: string, path: string){
 	};
 
 	req.send();
+}
+
+export function getNesObj () {
+  return nes;
 }
 
 document.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});

@@ -24,10 +24,12 @@ function NesHistory(props: NesHistoryProps) {
           let tText = obj.type === 0 ? '自动存档' : '主动存档';
           let dText = moment(obj.time).format('YY/MM/DD HH:mm:ss');
           return (
-            <li key={k} className="history-row" >
+            <li key={k} className="history-row" onClick={
+              () => props.onSelect(props.selectedId && !obj._id ? '' : obj._id)
+            }>
               <div className="s">
                 <input type="checkbox"
-                  onChange={() => props.onSelect(props.selectedId ? '' : obj._id)}
+                  onChange={() => props.onSelect(props.selectedId && !obj._id ? '' : obj._id)}
                   checked={props.selectedId === obj._id} />
               </div>
               <div className="t">{tText}</div>

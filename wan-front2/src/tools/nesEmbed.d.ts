@@ -1,4 +1,3 @@
-
 declare module 'jsnes' {
 
   interface NESInit {
@@ -16,8 +15,8 @@ declare module 'jsnes' {
     BUTTON_SELECT: any;
     BUTTON_START: any;
   }
-  let Controller: ControllerType;
 
+  export const Controller: ControllerType;
 
   export const buttonDown = (player:1, btnType: any) => {};
 
