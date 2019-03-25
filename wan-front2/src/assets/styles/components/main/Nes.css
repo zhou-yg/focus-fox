@@ -1,5 +1,7 @@
 .main-nes {
+  box-sizing: border-box;
   padding: 20px;
+  height: 100%;
   .main-nes-header-top {
     height: 180px;
   }
@@ -64,6 +66,23 @@
   }
 
   .main-nes-center {
+    height: 100%;
+    .main-nes-start {
+      position: relative;
+      height: 100%;
+
+      .main-nes-canvas-box {
+        height: 100%;
+      }
+    }
+    #nesGameId {
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     .main-nes-history-top {
       position: absolute;
       top: 50%;

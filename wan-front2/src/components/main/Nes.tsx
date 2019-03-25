@@ -13,7 +13,7 @@ interface NesProps {
 }
 function Nes(props:NesProps) {
   const [{onlineList}, {listItemById}] = useAllState();
-  const [isShowNesCenter, setNesCenter] = useState(true);
+  const [isShowNesCenter, setNesCenter] = useState(false);
   const curId = props.match.params._id;
 
   useEffect(() => {

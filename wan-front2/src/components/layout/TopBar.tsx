@@ -30,9 +30,11 @@ function TopBar() {
   return (
     <div className="topbar">
       {/* <Header /> */}
+      <Header />
       <div className="content">
         <div className="left-nav-box">
           {/* <LeftNav /> */}
+          <LeftNav />
         </div>
         <div className="right-content">
           {routerConfig.leftNav.concat(routerConfig.game).map(l => {

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import { Observer } from "mobx-react-lite";
 import NesHistory from './NesHistory';
 import {useAllState} from 'src/mobx/';
@@ -13,12 +13,20 @@ function NesGame (props: NesGameProps) {
   const [{onlineList}] = useAllState();
   const current = onlineList.data.filter(obj => obj._id === props.nesId)[0];
 
+  const elRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    nesLoadUrl('nesGameId', current.fileResource);
+    if (elRef.current) {
+      let s:CSSStyleDeclaration = getComputedStyle(elRef.current as HTMLDivElement)
+      let h:number = parseInt(s.height as string);
+      (elRef.current.querySelector('canvas') as HTMLCanvasElement).style.height = String(h * 0.8 + 'px');
+
+      nesLoadUrl('nesGameId', current.fileResource);
+    }
   }, [props.nesId]);
 
   return (
-    <div>
+    <div ref={elRef} className="main-nes-canvas-box">
       <canvas id="nesGameId" width="256" height="240" />
     </div>
   );
