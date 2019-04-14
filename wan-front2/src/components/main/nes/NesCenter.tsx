@@ -9,6 +9,7 @@ interface NesGameProps {
   historyId:string;
   nesId:string;
 }
+
 function NesGame (props: NesGameProps) {
   const [{onlineList}] = useAllState();
   const current = onlineList.data.filter(obj => obj._id === props.nesId)[0];

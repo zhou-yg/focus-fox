@@ -4,6 +4,7 @@
   "/api/wan/category/add",
   "/api/wan/category/getNesHistoryById",
   "/api/wan/category/hidden",
+  "/api/wan/category/keymap",
   "/api/wan/category/list",
   "/api/wan/category/listItemById",
   "/api/wan/category/listRepo",

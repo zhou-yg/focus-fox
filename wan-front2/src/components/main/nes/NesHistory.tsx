@@ -14,7 +14,7 @@ function NesHistory(props: NesHistoryProps) {
       <ul>
         <li className="history-row">
           <div className="s">
-            <input type="checkbox" checked={!props.selectedId} onChange={() => props.onSelect(props.selectedId ? '' : '')}/>
+            <input type="checkbox" checked={!props.selectedId} onChange={() => props.onSelect(props.selectedId ? '' : '')} />
           </div>
           <div className="t">新游戏</div>
           <div className="d">（默认）</div>

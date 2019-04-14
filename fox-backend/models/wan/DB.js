@@ -30,7 +30,7 @@ class DB {
     };
   }
   async insert (arg, doc) {
-    return this.base('insert')(arg, doc);
+    return this.base('insert')(arg);
   }
   async insertIfNotExists (q, arg) {
     let r = await this.find(q);
@@ -42,13 +42,13 @@ class DB {
     }
   }
   async remove (arg, doc) {
-    return this.base('remove')(arg, doc);
+    return this.base('remove')(arg);
   }
   async update (arg, doc) {
     return this.base('update')(arg, doc);
   }
   async find (arg, doc) {
-    return this.base('find')(arg, doc);
+    return this.base('find')(arg);
   }
 }
 

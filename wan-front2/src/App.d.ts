@@ -1,4 +1,5 @@
 // http
+type KeymapKeys = 'up' | 'down' | 'left' | 'right' | 'a' | 'b' | 'select' | 'start';
 
 type CategoryType = 1 | 2 | 3 | 4 | 5 | 6 |7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 
@@ -62,6 +63,21 @@ interface NesHistoryItem {
     saveData: void;
 }
 
+interface KeymapQuery {
+  from?: KeymapKeys;
+  toKeyCode?: number;
+}
+interface KeymapRes {
+  up: number;
+  down: number;
+  left: number;
+  right: number;
+  a: number;
+  b: number;
+  select: number;
+  start: number;
+}
+
 interface ApiLayer1 {
   api: {
     wan: {
@@ -73,6 +89,7 @@ interface ApiLayer1 {
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
         listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
         getNesHistoryById: ApiNormal<WanCategoryIdQuery, Array<NesHistoryItem>>;
+        keymap: ApiNormal<KeymapQuery, KeymapRes>;
       },
     },
     user: {
@@ -82,6 +99,8 @@ interface ApiLayer1 {
 }
 
 // mobx
+type StateKey = 'repoList' | 'onlineList' | 'gameHistory' | 'keymap';
+
 interface WanCategoryPageRes2 extends WanCategoryPageRes {
     page: number;
     selectType: CategoryType;
@@ -95,18 +114,25 @@ interface GameHistoryState {
   id: string;
   list: Array<NesHistoryItem>;
 }
-interface AllState {
-  [key in StateKey]
-  repoList:WanCategoryPageRes2;
-  onlineList: WanPushedCategoryPageRes3;
-  gameHistory: GameHistoryState;
-}
 interface AllActions {
   getList: (page: number, type:CategoryType) => void;
   getOnlineList: (page: number, type:CategoryType) => void;
   pushNes: (item: WanCategoryAdd) => Promise<WanCategoryAddPushingState>;
   listItemById: (_id: string) => void;
   getNesHistoryById: (_id:string) => void;
+  getKeymap: () => void;
+  updateKeymap: (from: KeymapKeys, toKeyCode: number) => void;
 }
 
-type StateKey = 'repoList' | 'onlineList' | 'gameHistory';
+interface Keymap extends KeymapRes {
+
+}
+
+
+interface AllState {
+  [key in StateKey]
+  repoList:WanCategoryPageRes2;
+  onlineList: WanPushedCategoryPageRes3;
+  gameHistory: GameHistoryState;
+  keymap: Keymap;
+}

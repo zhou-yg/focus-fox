@@ -51,12 +51,23 @@ const initStateMap = {
     id: '',
     list: [],
   })),
+  keymap: () => (observable<Keymap>({
+    'up': 38,
+    'down': 40,
+    'left': 37,
+    'right': 39,
+    'a': 65,
+    'b': 83,
+    'select': 9,
+    'start': 13,
+  }))
 };
 
 const allState:AllState = {
   repoList: initStateMap.repoList(),
   onlineList: initStateMap.onlineList(),
   gameHistory: initStateMap.gameHistory(),
+  keymap: initStateMap.keymap(),
 };
 
 const actions:AllActions = {
@@ -112,9 +123,18 @@ const actions:AllActions = {
     allState.gameHistory.list = r;
     allState.gameHistory.id = _id;
   },
+  getKeymap: async () => {
+    allState.keymap = await http.api.wan.category.keymap.post({});
+  },
+  updateKeymap: async (from: KeymapKeys, toKeyCode: number) => {
+    allState.keymap = await http.api.wan.category.keymap.post({
+      from,
+      toKeyCode,
+    });
+  },
 }
 
-// window.test = state;
+window.test = actions;
 
 export function useAllState (): [AllState, AllActions] {
   let currentState: { [key:string]:any } = {};
