@@ -33,7 +33,7 @@
   }
 
 
-
+  /* history */
   .main-nes-history {
     border: 1px solid #fff;
     height: 200px;
@@ -63,6 +63,10 @@
 
       }
     }
+  }
+  /* keymap */
+  .main-nes-keymap {
+    display: flex;
   }
 
   .main-nes-center {
