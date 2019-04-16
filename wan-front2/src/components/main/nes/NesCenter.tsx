@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
 import { Observer } from "mobx-react-lite";
 import NesHistory from './NesHistory';
+import NesKeymap from './NesKeymap';
 import {useAllState} from 'src/mobx/';
 import moment from 'moment';
 import {nesLoadUrl, nesLoadData, getNesObj} from 'src/tools/nesEmbed';
@@ -74,17 +75,24 @@ function NesCenter(props: NesCenterProps) {
       <NesGame nesId={nesId} historyId={selectedDiskId} />
     </div>
   ) : (<div className="main-nes-history-top">
+
     <header className="main-nes-history-top-header">
       {selectGame ? `已选择 ${selectTypeText} ${selectTime}` : '新游戏'}
       <button onClick={gameStart}>开始游戏</button>
     </header>
 
     <Observer render={() => {
-      return <NesHistory
-        selectedId={selectedDiskId}
-        list={gameHistory.list}
-        onSelect={selectHistoryItem}
-      />
+      return (
+        <div>
+          <NesHistory
+            selectedId={selectedDiskId}
+            list={gameHistory.list}
+            onSelect={selectHistoryItem}
+          />
+          <br/>
+          <NesKeymap />
+        </div>
+      )
     }} />
   </div>)
   }
