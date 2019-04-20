@@ -51,16 +51,18 @@ const initStateMap = {
     id: '',
     list: [],
   })),
-  keymap: () => (observable<Keymap>({
-    'up': 38,
-    'down': 40,
-    'left': 37,
-    'right': 39,
-    'a': 65,
-    'b': 83,
-    'select': 9,
-    'start': 13,
-  }))
+  keymap: () => (observable<Array<KeymapResUnit>>([
+    {
+      'up': 87,
+      'down': 83,
+      'left': 65,
+      'right': 68,
+      'a': 75,
+      'b': 74,
+      'select': 86,
+      'start': 66,
+    }
+  ]))
 };
 
 const allState:AllState = {
@@ -124,7 +126,14 @@ const actions:AllActions = {
     allState.gameHistory.id = _id;
   },
   getKeymap: async () => {
-    allState.keymap = await http.api.wan.category.keymap.post({});
+    allState.keymap = (await http.api.wan.category.keymap.post({})).map(obj => {
+      // let keys:Array<KeymapKeys> = ['up', 'down', 'left', 'right', 'a', 'b', 'select', 'start'];
+      // keys.forEach(k => {
+      //   console.log(k, typeof k, obj[k]);
+      //   obj[k] = parseInt(obj[k] as unknown as string);
+      // });
+      return obj;
+    });
   },
   updateKeymap: async (from: KeymapKeys, toKeyCode: number) => {
     allState.keymap = await http.api.wan.category.keymap.post({

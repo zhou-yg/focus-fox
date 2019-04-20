@@ -12,12 +12,17 @@ export default function InputText (props: InputTextProps) {
     cacheValue = (v.currentTarget.value);
   };
   let onBlur = () => {
-    changeEditState(false);
-    props.onChange(cacheValue);
+    let v = String(cacheValue)[0];
+    if (/^[a-zA-Z]$/.test(v)) {
+      changeEditState(false);
+      props.onChange(v);
+    } else {
+      props.onChange(props.value)
+    }
   };
   return (
     <div className="input-text" onClick={() => { changeEditState(true); }}>
-      {isEditState ? <input autoFocus onBlur={onBlur} onChange={inputNewValue}/>: <span>{props.value}</span>}
+      {isEditState ? <input autoFocus defaultValue={props.value} onBlur={onBlur} onChange={inputNewValue}/>: <span>{props.value}</span>}
     </div>
   );
 }

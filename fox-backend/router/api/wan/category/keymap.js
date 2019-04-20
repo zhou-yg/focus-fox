@@ -1,14 +1,14 @@
 const path = require('path');
 
 const toValues = () => ({
-  'up': 38,
-  'down': 40,
-  'left': 37,
-  'right': 39,
-  'a': 65,
-  'b': 83,
-  'select': 9,
-  'start': 13,
+  'up': 87,
+  'down': 83,
+  'left': 65,
+  'right': 68,
+  'a': 75,
+  'b': 74,
+  'select': 86,
+  'start': 66,
 });
 
 const constrolKeys = Object.keys(toValues());
@@ -16,13 +16,16 @@ const constrolKeys = Object.keys(toValues());
 module.exports = {
   method: 'post',
   handler: async function (ctx, next) {
-    const {from, toKeyCode} = ctx.request.body;
+    const {index = 0, from, toKeyCode} = ctx.request.body;
     const userId = ctx.session.user.id;
 
     if (from && toKeyCode) {
       if (constrolKeys.includes(from)) {
 
-        let {data:r} = await ctx.models.keymap.find({userId})
+        let {data:r} = await ctx.models.keymap.find({
+          userId,
+          index,
+        });
         let action = '';
         let doc;
         if (r.length > 0) {
@@ -55,7 +58,10 @@ module.exports = {
     } else {
       let {data:r} = await ctx.models.keymap.find({userId});
       if (r.length > 0) {
-        r = r[0];
+        // r = r[0]; // 多组
+        r.map(obj => {
+          constrolKeys.forEach(k => obj[k] = parseInt(obj[k]))
+        });
       } else {
         r = toValues()
       }

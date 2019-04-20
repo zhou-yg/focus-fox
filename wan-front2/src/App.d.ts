@@ -67,7 +67,8 @@ interface KeymapQuery {
   from?: KeymapKeys;
   toKeyCode?: number;
 }
-interface KeymapRes {
+interface KeymapResUnit {
+  [key in KeymapKeys];
   up: number;
   down: number;
   left: number;
@@ -89,7 +90,7 @@ interface ApiLayer1 {
         listRepo: ApiNormal<WanCategoryPage, WanCategoryPageRes>;
         listItemById: ApiNormal<WanCategoryIdQuery, WanCategoryPushed>;
         getNesHistoryById: ApiNormal<WanCategoryIdQuery, Array<NesHistoryItem>>;
-        keymap: ApiNormal<KeymapQuery, KeymapRes>;
+        keymap: ApiNormal<KeymapQuery, Array<KeymapResUnit>>;
       },
     },
     user: {
@@ -124,15 +125,11 @@ interface AllActions {
   updateKeymap: (from: KeymapKeys, toKeyCode: number) => void;
 }
 
-interface Keymap extends KeymapRes {
-
-}
-
 
 interface AllState {
   [key in StateKey]
   repoList:WanCategoryPageRes2;
   onlineList: WanPushedCategoryPageRes3;
   gameHistory: GameHistoryState;
-  keymap: Keymap;
+  keymap: Array<KeymapResUnit>;
 }
