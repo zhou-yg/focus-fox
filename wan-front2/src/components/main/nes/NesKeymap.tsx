@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from "react";
+import InputText from 'src/components/basic/InputText';
 
 function NesKeymap() {
+  let [upValue, change] = useState<string>('up');
+
   return (
     <div className="main-nes-keymap">
       <div className="direction">
-        <div className="up">w</div>
+        <div className="up">
+          <InputText value={upValue} onChange={change} />
+        </div>
         <div className="down">s</div>
         <div className="left">a</div>
         <div className="right">d</div>
