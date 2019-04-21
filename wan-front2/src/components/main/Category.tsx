@@ -11,7 +11,6 @@ function Repo() {
 
   useEffect(() => {
     getOnlineList(onlineList.page, onlineList.selectType);
-    console.log('effect');
   });
 
   return (<div className="main-category main-repo">

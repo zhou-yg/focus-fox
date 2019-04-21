@@ -28,6 +28,7 @@ module.exports = {
         });
         let action = '';
         let doc;
+        console.log(r);
         if (r.length > 0) {
           r = r[0];
           r[from] = toKeyCode;
@@ -39,12 +40,14 @@ module.exports = {
           };
           r = {
             userId,
+            index,
           };
         } else {
           r = toValues();
           action = 'insert';
           r[from] = toKeyCode;
           r.userId = userId;
+          r.index = index;
         }
 
         await ctx.models.keymap[action](r, doc);

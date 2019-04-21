@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 interface InputTextProps {
   value: string;
-  onChange: (newV: string) => void;
+  onChange: (newV: string, oldV:string) => boolean;
 };
 
 export default function InputText (props: InputTextProps) {
@@ -12,13 +12,15 @@ export default function InputText (props: InputTextProps) {
     cacheValue = (v.currentTarget.value);
   };
   let onBlur = () => {
-    let v = String(cacheValue)[0];
-    if (/^[a-zA-Z]$/.test(v)) {
-      changeEditState(false);
-      props.onChange(v);
-    } else {
-      props.onChange(props.value)
-    }
+    // let v = String(cacheValue)[0];
+    // if (/^[a-zA-Z]$/.test(v)) {
+    //   changeEditState(false);
+    //   props.onChange(v);
+    // } else {
+    //   props.onChange(props.value)
+    // }
+    let r = props.onChange(cacheValue, props.value);
+    changeEditState(!r);
   };
   return (
     <div className="input-text" onClick={() => { changeEditState(true); }}>

@@ -122,14 +122,17 @@ interface AllActions {
   listItemById: (_id: string) => void;
   getNesHistoryById: (_id:string) => void;
   getKeymap: () => void;
-  updateKeymap: (from: KeymapKeys, toKeyCode: number) => void;
+  updateKeymap: (index:number, from: KeymapKeys, toKeyCode: number) => void;
 }
 
+interface KeymapState {
+  list: Array<KeymapResUnit>;
+}
 
 interface AllState {
   [key in StateKey]
   repoList:WanCategoryPageRes2;
   onlineList: WanPushedCategoryPageRes3;
   gameHistory: GameHistoryState;
-  keymap: Array<KeymapResUnit>;
+  keymap: KeymapState;
 }

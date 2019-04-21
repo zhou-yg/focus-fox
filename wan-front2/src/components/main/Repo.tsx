@@ -10,7 +10,6 @@ function Repo() {
 
   useEffect(() => {
     getList(repoList.page, repoList.selectType);
-    console.log('effect');
   });
 
   let add = async (item: WanCategoryAdd) => {
