@@ -59,29 +59,28 @@ function audio_callback(event:any){
 	audio_read_cursor = (audio_read_cursor + len) & SAMPLE_MASK;
 }
 
-function keyboard(callback:any, event:KeyboardEvent){
-	let player = 1;
-	switch(event.keyCode){
-		case 38: // UP
-			callback(player, jsnes.Controller.BUTTON_UP); break;
-		case 40: // Down
-			callback(player, jsnes.Controller.BUTTON_DOWN); break;
-		case 37: // Left
-			callback(player, jsnes.Controller.BUTTON_LEFT); break;
-		case 39: // Right
-			callback(player, jsnes.Controller.BUTTON_RIGHT); break;
-		case 65: // 'a' - qwerty, dvorak
-		case 81: // 'q' - azerty
-			callback(player, jsnes.Controller.BUTTON_A); break;
-		case 83: // 's' - qwerty, azerty
-		case 79: // 'o' - dvorak
-			callback(player, jsnes.Controller.BUTTON_B); break;
-		case 9: // Tab
-			callback(player, jsnes.Controller.BUTTON_SELECT); break;
-		case 13: // Return
-			callback(player, jsnes.Controller.BUTTON_START); break;
-		default: break;
-	}
+function keyboard(callback:any, event:KeyboardEvent, player:number = 1, keymaps: Array<KeymapResUnit>){
+  keymaps.forEach(obj => {
+    switch(event.keyCode){
+  		case obj.up: // UP
+  			callback(player, jsnes.Controller.BUTTON_UP); break;
+  		case obj.down: // Down
+  			callback(player, jsnes.Controller.BUTTON_DOWN); break;
+  		case obj.left: // Left
+  			callback(player, jsnes.Controller.BUTTON_LEFT); break;
+  		case obj.right: // Right
+  			callback(player, jsnes.Controller.BUTTON_RIGHT); break;
+  		case obj.a: // 'a' - qwerty, dvorak
+  			callback(player, jsnes.Controller.BUTTON_A); break;
+  		case obj.b: // 's' - qwerty, azerty
+  			callback(player, jsnes.Controller.BUTTON_B); break;
+  		case obj.select: // Tab
+  			callback(player, jsnes.Controller.BUTTON_SELECT); break;
+  		case obj.start: // Return
+  			callback(player, jsnes.Controller.BUTTON_START); break;
+  		default: break;
+  	}
+  });
 }
 
 function nes_init(canvas_id:string){
@@ -114,7 +113,12 @@ export function nesLoadData(canvas_id:string, rom_data:string){
 	nes_boot(rom_data);
 }
 
-export function nesLoadUrl(canvas_id: string, path: string){
+export function nesLoadUrl(
+  canvas_id: string,
+  path: string,
+  keymaps: Array<KeymapResUnit>,
+  keyEventCallback: (down:(e:KeyboardEvent)=>void,up:(e:KeyboardEvent)=>void) => void
+) {
 
 	let req = new XMLHttpRequest();
 	req.open("GET", path);
@@ -138,11 +142,13 @@ export function nesLoadUrl(canvas_id: string, path: string){
 	};
 
 	req.send();
+
+  keyEventCallback(
+    (event: KeyboardEvent) => {keyboard(nes.buttonDown, event, 1, keymaps)},
+    (event: KeyboardEvent) => {keyboard(nes.buttonUp, event, 1, keymaps)}
+  );
 }
 
 export function getNesObj () {
   return nes;
 }
-
-document.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});
-document.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)});

@@ -17,9 +17,7 @@ function NesHeader(props: NesHeaderProps) {
   return (
     <div className="main-nes-header">
       <div className="img-box">
-        {/*
-          <img width="100%" src={imgResource} />
-          */}
+        <img width="100%" src={imgResource} />
       </div>
       <ul className="intro">
         <li className="row">

@@ -8,7 +8,7 @@ interface NesGameProps {
 }
 
 export default function NesGame (props: NesGameProps) {
-  const [{onlineList}] = useAllState();
+  const [{onlineList, keymap}] = useAllState();
   const current = onlineList.data.filter(obj => obj._id === props.nesId)[0];
 
   const elRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,19 @@ export default function NesGame (props: NesGameProps) {
       let h:number = parseInt(s.height as string);
       (elRef.current.querySelector('canvas') as HTMLCanvasElement).style.height = String(h * 0.8 + 'px');
 
-      nesLoadUrl('nesGameId', current.fileResource);
+      let keydownFn: (e:KeyboardEvent) => void;
+      let keyupFn: (e:KeyboardEvent) => void;
+
+      nesLoadUrl('nesGameId', current.fileResource, keymap.list, (buttonDown: (event: KeyboardEvent) => void, buttonUp: (event: KeyboardEvent) => void) => {
+        keydownFn = buttonDown;
+        keyupFn = buttonUp;
+        document.addEventListener('keydown', buttonDown);
+        document.addEventListener('keyup', buttonUp);
+      });
+      return () => {
+        document.removeEventListener('keydown', keydownFn);
+        document.removeEventListener('keyup', keyupFn);
+      };
     }
   }, [props.nesId]);
 
