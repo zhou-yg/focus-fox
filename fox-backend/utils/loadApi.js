@@ -41,7 +41,10 @@ module.exports = function (base) {
   return function registerRouter (router, pre, apiNamesWhileList = []) {
     apiArr.forEach(obj => {
       if (apiNamesWhileList.indexOf(obj.path) !== -1 || apiNamesWhileList.length === 0) {
-        router[obj.method](`/${pre}${obj.path}`, obj.handler);
+        
+        let methodArgs = [`/${pre}${obj.path}`].concat(obj.handler);
+
+        router[obj.method](...methodArgs)
       }
     });
     return router;
