@@ -117,7 +117,7 @@ export function nesLoadUrl(
   canvas_id: string,
   path: string,
   keymaps: Array<KeymapResUnit>,
-  keyEventCallback: (down:(e:KeyboardEvent)=>void,up:(e:KeyboardEvent)=>void) => void
+  loadDone: (nes:jsnes.NES) => void,
 ) {
 
 	let req = new XMLHttpRequest();
@@ -133,6 +133,12 @@ export function nesLoadUrl(
       nes_init(canvas_id);
       setTimeout(() => {
         nes_boot(this.responseText);
+
+        setTimeout(() => {
+        //   window.test = nes;
+        //   console.log(nes.toJSON())
+          loadDone(nes);
+        }, 0);
       });
 		} else if (this.status === 0) {
 			// Aborted, so ignore error
@@ -143,12 +149,18 @@ export function nesLoadUrl(
 
 	req.send();
 
-  keyEventCallback(
-    (event: KeyboardEvent) => {keyboard(nes.buttonDown, event, 1, keymaps)},
-    (event: KeyboardEvent) => {keyboard(nes.buttonUp, event, 1, keymaps)}
-  );
+  let keydownFn: (e:KeyboardEvent) => void = (e:KeyboardEvent) => keyboard(nes.buttonDown, e, 1, keymaps);
+  let keyupFn: (e:KeyboardEvent) => void = (e:KeyboardEvent) => keyboard(nes.buttonDown, e, 1, keymaps);
+
+  document.addEventListener('keydown', keydownFn);
+  document.addEventListener('keyup', keyupFn);
+
+  return () => {
+    document.removeEventListener('keydown', keydownFn);
+    document.removeEventListener('keyup', keyupFn);
+  };
 }
 
-export function getNesObj () {
+export function getNesObj() : jsnes.NES {
   return nes;
 }

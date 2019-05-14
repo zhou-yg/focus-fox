@@ -20,6 +20,12 @@ declare module 'jsnes' {
 
   export const buttonDown = (player:1, btnType: any) => {};
 
+  interface NesJSON {
+    romData;
+    cpu;
+    mmap;
+    ppu;
+  }
 
   declare class NES {
     constructor(arg:NESInit):void;
@@ -27,5 +33,6 @@ declare module 'jsnes' {
     frame():void;
     buttonDown():void;
     buttonUp():void;
+    toJSON():void;
   }
 }

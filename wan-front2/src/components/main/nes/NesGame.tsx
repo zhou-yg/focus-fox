@@ -19,18 +19,13 @@ export default function NesGame (props: NesGameProps) {
       let h:number = parseInt(s.height as string);
       (elRef.current.querySelector('canvas') as HTMLCanvasElement).style.height = String(h * 0.8 + 'px');
 
-      let keydownFn: (e:KeyboardEvent) => void;
-      let keyupFn: (e:KeyboardEvent) => void;
 
-      nesLoadUrl('nesGameId', current.fileResource, keymap.list, (buttonDown: (event: KeyboardEvent) => void, buttonUp: (event: KeyboardEvent) => void) => {
-        keydownFn = buttonDown;
-        keyupFn = buttonUp;
-        document.addEventListener('keydown', buttonDown);
-        document.addEventListener('keyup', buttonUp);
+      let unload = nesLoadUrl('nesGameId', current.fileResource, keymap.list, (nes) => {
+        
       });
+
       return () => {
-        document.removeEventListener('keydown', keydownFn);
-        document.removeEventListener('keyup', keyupFn);
+        unload();
       };
     }
   }, [props.nesId]);
