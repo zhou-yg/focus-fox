@@ -60,7 +60,9 @@ function audio_callback(event:any){
 }
 
 function keyboard(callback:any, event:KeyboardEvent, player:number = 1, keymaps: Array<KeymapResUnit>){
+  console.log(event.keyCode, keymaps);
   keymaps.forEach(obj => {
+    console.log(obj.up, obj.toString())
     switch(event.keyCode){
   		case obj.up: // UP
   			callback(player, jsnes.Controller.BUTTON_UP); break;
@@ -150,8 +152,9 @@ export function nesLoadUrl(
 	req.send();
 
   let keydownFn: (e:KeyboardEvent) => void = (e:KeyboardEvent) => keyboard(nes.buttonDown, e, 1, keymaps);
-  let keyupFn: (e:KeyboardEvent) => void = (e:KeyboardEvent) => keyboard(nes.buttonDown, e, 1, keymaps);
+  let keyupFn: (e:KeyboardEvent) => void = (e:KeyboardEvent) => keyboard(nes.buttonUp, e, 1, keymaps);
 
+  console.log('key event');
   document.addEventListener('keydown', keydownFn);
   document.addEventListener('keyup', keyupFn);
 

@@ -2,7 +2,7 @@ import axios from 'axios'
 // 同步backend api 下
 import apiServerJson from './server-api.json'
 
-export const STATIC_HOST = `http://static.nomiwan.com:10800/public/`;
+export const STATIC_HOST = `http://localhost:10800/public/`;
 
 async function req (path:string, arg:any, method = 'GET', others = {}): Promise<any> {
   path = path.replace(/^\//, '');

@@ -3,8 +3,8 @@ const fs = require('fs');
 
 const request = require('request');
 
-const staticHost = `http://static.nomiwan.com:10800`;
-const staticHostPublic = `http://static.nomiwan.com:10800/public`;
+const staticHost = `http://localhost:10800`;
+const staticHostPublic = `http://localhost:10800/public`;
 
 function cacheFileExists(cachePath, remoteRelativePath) {
   if (fs.existsSync(cachePath)) {
@@ -68,27 +68,26 @@ async function downAndUpload (downlink, remoteStaticPath) {
   let remoteStaticPathBase = `${remoteStaticPath}/${base}`;
   let isCacheFileExists = await cacheFileExists(cacheFilePath, remoteStaticPathBase);
 
-  console.log(isCacheFileExists, remoteStaticPathBase, downlink);
+  console.log('checkCache => ', isCacheFileExists, remoteStaticPathBase, downlink);
   if (!isCacheFileExists) {
     let cws = fs.createWriteStream(cacheFilePath);
     let downs = download(downlink);
     downs.pipe(cws);
 
-    console.log(`add 0.0`);
     await new Promise((resolve) => {
       cws.on('finish', () => {
         resolve();
       });
     });
-    console.log(`add 1`);
+    console.log(`download link complete:`, downlink);
     await new Promise(resolve => {
         upload(fs.createReadStream(path.join(__ROOT_CACHE__, base)), remoteStaticPath, (err, res, body) => {
-          console.log(body);
+          console.log('upload stats => ',body);
           resolve();
         });
     });
+    console.log(`upload to remote complete! => `, downlink);
   } else {
-    console.log(`add 0.1`);
   }
   return remoteStaticPathBase;
 }
@@ -102,6 +101,8 @@ module.exports = {
     if (old.data.length > 0) {
       ctx.body = `${name} ${downlink} already exists`;
     } else {
+
+      console.log(`add 1:`, name);
 
       const [fileResource, imgResource] = await Promise.all([
         downAndUpload(downlink, `${type}/${category}/roms`),

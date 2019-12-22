@@ -117,6 +117,7 @@ const actions:AllActions = {
     allState.gameHistory.id = _id;
   },
   getKeymap: async () => {
+
     allState.keymap.list = (await http.api.wan.category.keymap.post({})).map(obj => {
       // let keys:Array<KeymapKeys> = ['up', 'down', 'left', 'right', 'a', 'b', 'select', 'start'];
       // keys.forEach(k => {

@@ -1,4 +1,5 @@
-const HOST = 'http://mongo.nomiwan.com:8880/sms';
+// const HOST = 'http://mongo.nomiwan.com:8880/sms';
+const HOST = 'http://localhost:8880/sms';
 const request = require('request');
 
 class DB {

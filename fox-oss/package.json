@@ -1,0 +1,26 @@
+{
+  "name": "express-file-service",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node start-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhou-yg/express-file-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhou-yg/express-file-service/issues"
+  },
+  "homepage": "https://github.com/zhou-yg/express-file-service#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "forever": "^0.15.3",
+    "multer": "^1.4.1",
+    "serve-index": "^1.9.1"
+  }
+}

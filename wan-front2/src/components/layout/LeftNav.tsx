@@ -40,6 +40,12 @@ const leftNavConfig: Array<LeftNavItem> = [
     children: [],
   },
   {
+    type: 'header',
+    name: '最热排行',
+    href: '/wan/rank',
+    children: [],
+  },
+  {
     type: 'header-top',
     name: '游戏分类',
     href: '',

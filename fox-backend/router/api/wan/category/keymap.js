@@ -52,6 +52,9 @@ module.exports = {
 
         await ctx.models.keymap[action](r, doc);
 
+        if (!r.length) {
+          r = [r];
+        }
         ctx.body = r;
 
       } else {
@@ -60,13 +63,14 @@ module.exports = {
       }
     } else {
       let {data:r} = await ctx.models.keymap.find({userId});
+      console.log(`keymap else r: `, r);
       if (r.length > 0) {
         // r = r[0]; // 多组
         r.map(obj => {
           constrolKeys.forEach(k => obj[k] = parseInt(obj[k]))
         });
       } else {
-        r = toValues()
+        r = [toValues()]
       }
       ctx.body = r;
     }

@@ -19,9 +19,8 @@ export default function NesGame (props: NesGameProps) {
       let h:number = parseInt(s.height as string);
       (elRef.current.querySelector('canvas') as HTMLCanvasElement).style.height = String(h * 0.8 + 'px');
 
-
       let unload = nesLoadUrl('nesGameId', current.fileResource, keymap.list, (nes) => {
-        
+
       });
 
       return () => {
