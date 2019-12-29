@@ -42,7 +42,7 @@ const leftNavConfig: Array<LeftNavItem> = [
   {
     type: 'header',
     name: '最热排行',
-    href: '/wan/rank',
+    href: '/wan/',
     children: [],
   },
   {

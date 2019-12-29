@@ -54,4 +54,4 @@ async function task(i) {
 }
 
 console.log('all is: ', list.length);
-task(209);
+task(0);

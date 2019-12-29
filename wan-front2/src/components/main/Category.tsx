@@ -4,12 +4,13 @@ import SearchBar2 from 'src/components/basic/SearchBar2';
 import {useAllState} from 'src/mobx/';
 import { Link } from "react-router-dom";
 
-function Repo() {
+function Repo(props:any) {
 
   // const onlineList = useObservable<WanCategoryPageRes2>({ data: [], all: 0, page: 1 });
   const [{onlineList}, {getOnlineList}] = useAllState();
 
   useEffect(() => {
+    onlineList.selectType = props.match.params.type;
     getOnlineList(onlineList.page, onlineList.selectType);
   });
 
