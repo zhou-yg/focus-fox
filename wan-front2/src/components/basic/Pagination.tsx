@@ -1,6 +1,7 @@
 import React from "react";
 
 interface PaginationProp {
+  all?: number;
   current: number;
   onPrev ?: () => void;
   onNext ?: () => void;
@@ -35,6 +36,11 @@ function Pagination(props:PaginationProp ) {
 
   return <div className="pagination-top">
     <div className="pagination">
+      {props.all ? (
+        <span>
+        总数: {props.all}
+        </span>        
+      ) : ''}
       <span className="goto">
         <input onKeyDown={onEnter} id="paginationInput"/>
         <span className="go-btn" onClick={jumpto}> go> </span>

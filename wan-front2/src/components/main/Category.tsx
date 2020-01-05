@@ -18,6 +18,7 @@ function Repo(props:any) {
     <Observer render={() => {
       return (
         <SearchBar2
+          all={onlineList.all}
           page={onlineList.page}
           changePage={p => getOnlineList(p, onlineList.selectType)} />
       );

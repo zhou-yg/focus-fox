@@ -9,8 +9,10 @@ module.exports = async function (ctx, next) {
 
   const filterData = data.filter(obj => !obj.hidden);
 
+  const index = pageSize * (page - 1);
+
   ctx.body = {
     all: filterData.length,
-    data: filterData.slice(pageSize * (page - 1), pageSize * (page - 1) + pageSize),
+    data: filterData.slice(index, index + Number(pageSize)),
   };
 }

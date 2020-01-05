@@ -92,7 +92,7 @@ const actions:AllActions = {
     http.api.wan.category.list.get({
       type,
       page,
-      pageSize: 10,
+      pageSize: 20,
     }).then(({all, data}) => {
       allState.onlineList.all = all;
       allState.onlineList.data = data.map(transOnlineItem);

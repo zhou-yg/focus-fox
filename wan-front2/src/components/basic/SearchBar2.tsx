@@ -3,6 +3,7 @@ import Pagination from './Pagination';
 
 
 interface SearchBarProps {
+  all: number;
   page: number;
   changePage: (target: number) => void;
 };
@@ -11,7 +12,7 @@ function SearchBar(props: SearchBarProps) {
 
   return (
     <div className="search-bar">
-      <Pagination onChange={props.changePage} current={props.page}/>
+      <Pagination all={props.all} onChange={props.changePage} current={props.page}/>
     </div>
   );
 }

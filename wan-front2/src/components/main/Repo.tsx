@@ -22,6 +22,7 @@ function Repo() {
     <Observer render={() => {
       return (
         <SearchBar
+          all={repoList.all}
           select={repoList.selectType}
           changeSelect={v => getList(repoList.page, v)}
           page={repoList.page}

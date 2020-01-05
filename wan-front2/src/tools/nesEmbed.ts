@@ -17,6 +17,8 @@ let audio_samples_L = new Float32Array(SAMPLE_COUNT);
 let audio_samples_R = new Float32Array(SAMPLE_COUNT);
 let audio_write_cursor = 0;
 let audio_read_cursor = 0;
+// raf 计时器
+let gameFrameFlag: number = 0;
 
 let nes = new jsnes.NES({
 	onFrame: function(framebuffer_24:any){
@@ -29,9 +31,10 @@ let nes = new jsnes.NES({
 	},
 });
 
-function onAnimationFrame(){
-	window.requestAnimationFrame(onAnimationFrame);
 
+function onAnimationFrame(){
+  console.log('aniframe')
+	gameFrameFlag = window.requestAnimationFrame(onAnimationFrame);
 	image.data.set(framebuffer_u8);
 	canvas_ctx.putImageData(image, 0, 0);
 	nes.frame();
@@ -107,7 +110,13 @@ function nes_init(canvas_id:string){
 
 function nes_boot(rom_data: any){
 	nes.loadROM(rom_data);
-	window.requestAnimationFrame(onAnimationFrame);
+  gameStart();
+}
+function gameStart () {
+  gameFrameFlag = window.requestAnimationFrame(onAnimationFrame);
+}
+function gameStop () {
+  window.cancelAnimationFrame(gameFrameFlag);
 }
 
 export function nesLoadData(canvas_id:string, rom_data:string){
@@ -159,6 +168,7 @@ export function nesLoadUrl(
   document.addEventListener('keyup', keyupFn);
 
   return () => {
+    gameStop();
     document.removeEventListener('keydown', keydownFn);
     document.removeEventListener('keyup', keyupFn);
   };

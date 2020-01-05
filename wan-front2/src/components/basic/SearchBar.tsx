@@ -32,6 +32,7 @@ const typeSelects:Array<CategoryTypeOption> = indexArr.map((i, ii) => {
 });
 
 interface SearchBarProps {
+  all: number;
   select:CategoryType;
   pushed?:Boolean;
   changeSelect: (value:CategoryType) => void;
