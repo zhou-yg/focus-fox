@@ -161,8 +161,23 @@
       position: relative;
       height: 100%;
 
+      .main-nes-game {
+        height: 100%;
+      }
+
+      .main-nes-canvas-top {
+        text-align: center;
+        > button {
+          margin: 0 5px;
+        }
+      }
+
       .main-nes-canvas-box {
         height: 100%;
+
+        > canvas {
+          height: 100%;
+        }
       }
     }
     #nesGameId {

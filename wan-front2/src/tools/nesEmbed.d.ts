@@ -27,12 +27,13 @@ declare module 'jsnes' {
     ppu;
   }
 
-  declare class NES {
+  export class NES {
     constructor(arg:NESInit):void;
     loadROM(romData:any):void;
     frame():void;
     buttonDown():void;
     buttonUp():void;
     toJSON():void;
+    reset(): void;
   }
 }

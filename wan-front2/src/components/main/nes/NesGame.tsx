@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from "react";
-import {nesLoadUrl, nesLoadData, getNesObj} from 'src/tools/nesEmbed';
+import {nesLoadUrl, getNesObj, gameStop, gameStart} from 'src/tools/nesEmbed';
 import {useAllState} from 'src/mobx/';
 
 interface NesGameProps {
@@ -25,13 +25,21 @@ export default function NesGame (props: NesGameProps) {
 
       return () => {
         unload();
+        gameStop();
       };
     }
   }, [props.nesId]);
 
   return (
-    <div ref={elRef} className="main-nes-canvas-box">
-      <canvas id="nesGameId" width="256" height="240" />
+    <div className="main-nes-game">
+      <div className="main-nes-canvas-top">
+      <button onClick={gameStop} >结束</button>
+      <button>保存</button>
+      <button>读取</button>
+      </div>
+      <div ref={elRef} className="main-nes-canvas-box">
+        <canvas id="nesGameId" width="256" height="240" />
+      </div>
     </div>
   );
 }

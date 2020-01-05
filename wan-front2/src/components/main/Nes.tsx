@@ -41,12 +41,9 @@ function Nes(props:NesProps) {
 
 
     <Observer render={() => {
-      // return (isShowNesCenter ? (<NesCenter
-      //   nesId={curId}
-      //   />) : <span>wait starting</span>);
-      return <NesCenter
+      return (isShowNesCenter ? (<NesCenter
         nesId={curId}
-        />;
+        />) : <span>wait starting</span>);
     }} />
 
   </div>);

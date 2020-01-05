@@ -13,6 +13,7 @@ let framebuffer_u32:any;
 let AUDIO_BUFFERING = 512;
 let SAMPLE_COUNT = 4*1024;
 let SAMPLE_MASK = SAMPLE_COUNT - 1;
+let audio_ctx: AudioContext;
 let audio_samples_L = new Float32Array(SAMPLE_COUNT);
 let audio_samples_R = new Float32Array(SAMPLE_COUNT);
 let audio_write_cursor = 0;
@@ -25,6 +26,9 @@ let nes = new jsnes.NES({
 		for(let i = 0; i < FRAMEBUFFER_SIZE; i++) framebuffer_u32[i] = 0xFF000000 | framebuffer_24[i];
 	},
 	onAudioSample: function(l:any, r:any){
+    if (gameFrameFlag) {
+
+    }
 		audio_samples_L[audio_write_cursor] = l;
 		audio_samples_R[audio_write_cursor] = r;
 		audio_write_cursor = (audio_write_cursor + 1) & SAMPLE_MASK;
@@ -33,11 +37,14 @@ let nes = new jsnes.NES({
 
 
 function onAnimationFrame(){
-  console.log('aniframe')
 	gameFrameFlag = window.requestAnimationFrame(onAnimationFrame);
 	image.data.set(framebuffer_u8);
 	canvas_ctx.putImageData(image, 0, 0);
-	nes.frame();
+  try {
+    nes.frame();
+  } catch(e) {
+    console.log('frame2:', e);
+  }
 }
 
 function audio_remain(){
@@ -49,7 +56,13 @@ function audio_callback(event:any){
 	let len = dst.length;
 
 	// Attempt to avoid buffer underruns.
-	if(audio_remain() < AUDIO_BUFFERING) nes.frame();
+	if(audio_remain() < AUDIO_BUFFERING) {
+    try {
+      nes.frame();
+    } catch (e) {
+      console.log('frame3:', e);
+    }
+  };
 
 	let dst_l = dst.getChannelData(0);
 	let dst_r = dst.getChannelData(1);
@@ -102,7 +115,7 @@ function nes_init(canvas_id:string){
 	framebuffer_u32 = new Uint32Array(buffer);
 
 	// Setup audio.
-	let audio_ctx:AudioContext = new AudioContext();
+	audio_ctx = new AudioContext();
 	let script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
@@ -112,16 +125,17 @@ function nes_boot(rom_data: any){
 	nes.loadROM(rom_data);
   gameStart();
 }
-function gameStart () {
+export function gameStart () {
   gameFrameFlag = window.requestAnimationFrame(onAnimationFrame);
 }
-function gameStop () {
+export function gameStop () {
   window.cancelAnimationFrame(gameFrameFlag);
-}
-
-export function nesLoadData(canvas_id:string, rom_data:string){
-	nes_init(canvas_id);
-	nes_boot(rom_data);
+  audio_ctx.close();
+  try {
+    nes.reset();
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 export function nesLoadUrl(
