@@ -32,25 +32,29 @@ async function task(i) {
   if (!o) {
     return;
   }
+  if (o.id === '001186') {
 
-  delete o.id;
+    delete o.id;
 
-  console.log(`${i} ------start-----> `, o.name)
+    console.log(`${i} ------start-----> `, o.name)
 
-  request({
-    url: 'http://localhost:10666/api/wan/category/add',
-    method: 'POST',
-    json: true,
-    body: {
-      type: 'nes',
-      ...o,
-    },
-  }, (err, res, body) => {
-    console.log(err);
-    console.log(body);
-    console.log(`${i} ------end-----> `)
+    request({
+      url: 'http://localhost:10666/api/wan/category/add',
+      method: 'POST',
+      json: true,
+      body: {
+        type: 'nes',
+        ...o,
+      },
+    }, (err, res, body) => {
+      console.log(err);
+      console.log(body);
+      console.log(`${i} ------end-----> `)
+      // task(i + 1);
+    });
+  }else {
     task(i + 1);
-  });
+  }
 }
 
 console.log('all is: ', list.length);

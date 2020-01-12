@@ -1,5 +1,7 @@
 const path = require('path');
 
+const checkNesFile = require('../../../../utils/checkNesFile');
+
 module.exports = async function (ctx, next) {
   const {_id} = ctx.request.query;
 
@@ -8,6 +10,11 @@ module.exports = async function (ctx, next) {
   });
 
   const filterData = data.filter(obj => !obj.hidden);
+  const item = filterData[0];
 
-  ctx.body = filterData[0];
+  item.size = await checkNesFile(item.fileResource);
+  item.exists = item.size > 0;
+  item.fileResource = encodeURIComponent(item.fileResource);
+
+  ctx.body = item;
 }

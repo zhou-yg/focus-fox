@@ -101,6 +101,9 @@ app.get('/status', (req, res) => {
   if (/^\//.test(fileDest)) {
     fileDest = `.${fileDest}`;
   }
+
+  console.log('fileDest', fileDest);
+
   const finalFileDest = path.join(PUBLIC_DIR, fileDest);
 
   if (fs.existsSync(finalFileDest)) {

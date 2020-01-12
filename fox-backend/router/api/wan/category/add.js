@@ -97,6 +97,8 @@ module.exports = {
   async handler (ctx, next) {
     let {type = 'default', name, downlink,category, url, img} = ctx.request.body;
 
+    console.log(`downlink:`, downlink);
+
     let old = await ctx.models.category.find({downlink});
     if (old.data.length > 0) {
       ctx.body = `${name} ${downlink} already exists`;

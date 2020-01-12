@@ -11,7 +11,7 @@ function Header() {
       <div className="logo-box">
         <img className="logo" src={logo} alt="" /> &nbsp;
         <span>
-          Fox Wan
+          糯米丸
         </span>
       </div>
       <div className="profile">

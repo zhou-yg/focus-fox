@@ -22,6 +22,7 @@ interface WanCategoryPushed extends WanCategoryAdd {
   fileResource: string;
   imgResource: string;
   categoryName: string;
+  exists: boolean;
 }
 
 interface WanCategoryQuery {

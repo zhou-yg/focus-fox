@@ -30,6 +30,11 @@ function Repo(props:any) {
           return (
             <li className="repo-li" key={`${item.name}-${index}`}>
               <Link to={`/wan/game/${item._id}`}>
+                {item.exists ? '' : (
+                  <div className="game-notfound">
+                    无
+                  </div>
+                )}
                 <div className="img-box">
                   <img src={item.imgResource} />
                 </div>

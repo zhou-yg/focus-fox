@@ -44,6 +44,7 @@ function onAnimationFrame(){
     nes.frame();
   } catch(e) {
     console.log('frame2:', e);
+    gameStop();
   }
 }
 
@@ -61,6 +62,7 @@ function audio_callback(event:any){
       nes.frame();
     } catch (e) {
       console.log('frame3:', e);
+      gameStop();
     }
   };
 
