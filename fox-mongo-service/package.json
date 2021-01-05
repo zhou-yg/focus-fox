@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/zhou-yg/simple-mongo-server#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "forever": "^0.15.3",
     "koa": "^2.3.0",
     "koa-body": "^4.0.1",
